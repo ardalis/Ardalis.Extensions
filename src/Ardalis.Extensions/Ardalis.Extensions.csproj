@@ -12,8 +12,8 @@
     <Summary>Some useful extension methods.</Summary>
     <RepositoryUrl>https://github.com/ardalis/Ardalis.Extensions</RepositoryUrl>
     <PackageTags>extensions extension method methods c# .net dotnet</PackageTags>
-    <PackageReleaseNotes>Initial version with a string Truncate method</PackageReleaseNotes>
-    <Version>0.1.0</Version>
+    <PackageReleaseNotes>Testing GitHub Publish Action</PackageReleaseNotes>
+    <Version>0.1.1</Version>
     <AssemblyName>Ardalis.Extensions</AssemblyName>
     <PackageIconUrl>https://user-images.githubusercontent.com/782127/33497760-facf6550-d69c-11e7-94e4-b3856da259a9.png</PackageIconUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
