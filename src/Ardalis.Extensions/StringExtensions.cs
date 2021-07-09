@@ -5,7 +5,7 @@ namespace Ardalis.Extensions
     public static class StringExtensions
     {
         /// <summary>
-        /// Truncates string so that it is no longer than the specified number of characters.
+        /// Truncates string so that it is no longer than the specified number of characters. 
         /// 
         /// Source: https://stackoverflow.com/a/17249604/13729
         /// </summary>
