@@ -1,5 +1,6 @@
 name: publish Ardalis.Extensions to nuget
 on:
+  workflow_dispatch:
   push:
     branches:
       - main # Your default release branch
