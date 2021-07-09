@@ -80,9 +80,9 @@ namespace Ardalis.Extensions
             }
 
             // Check for valid base64
-            var base64 = encodedString.Trim();
+            encodedString = encodedString.Trim();
             var isValidBase64 = (encodedString.Length % 4 == 0) &&
-                                Regex.IsMatch(base64, @"^[a-zA-Z0-9\+/]*={0,3}$", RegexOptions.None);
+                                Regex.IsMatch(encodedString, @"^[a-zA-Z0-9\+/]*={0,3}$", RegexOptions.None);
 
             if (!isValidBase64)
             {
