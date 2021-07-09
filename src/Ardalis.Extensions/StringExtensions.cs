@@ -27,5 +27,20 @@ namespace Ardalis.Extensions
             int maxLength = Math.Min(input.Length, length);
             return input.Substring(0, maxLength);
         }
+
+        /// <summary>
+        /// Converts string to int.
+        /// </summary>
+        /// <param name="input">String to truncate.</param>
+        /// <returns>Convert to int.</returns>
+        public static int ToInt(this string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                return 0;
+            }
+
+            return int.Parse(input);
+        }
     }
 }
