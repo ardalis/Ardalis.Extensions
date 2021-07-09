@@ -42,5 +42,32 @@ namespace Ardalis.Extensions
 
             return int.Parse(input);
         }
+        
+        /// <summary>
+        /// Encodes string to base64.
+        /// 
+        /// Source: https://stackoverflow.com/questions/11743160/how-do-i-encode-and-decode-a-base64-string
+        /// </summary>
+        /// <param name="plainText">String to encode.</param>
+        /// <returns>The base64 encoded version of the string</returns>        
+        public static string Base64Encode(this string plainText)
+        {
+            var plainTextBytes = Encoding.UTF8.GetBytes(plainText);
+            return Convert.ToBase64String(plainTextBytes);
+        }
+
+        /// <summary>
+        /// Decodes string from base64 to its normal representation.
+        /// 
+        /// Source: https://stackoverflow.com/questions/11743160/how-do-i-encode-and-decode-a-base64-string
+        /// </summary>
+        /// <param name="encodedString">String to encode.</param>
+        /// <returns>The decoded version of the string</returns>        
+        public static string DecodeBase64String(this string encodedString)
+        {
+            var data = Convert.FromBase64String(encodedString);
+            var decodedString = Encoding.UTF8.GetString(data);
+            return decodedString;
+        }
     }
 }
