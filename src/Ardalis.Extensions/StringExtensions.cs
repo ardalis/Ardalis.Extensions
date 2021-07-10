@@ -35,12 +35,9 @@ namespace Ardalis.Extensions
         /// <returns>Convert to int.</returns>
         public static int ToInt(this string input)
         {
-            if (string.IsNullOrEmpty(input))
-            {
-                return 0;
-            }
+            int.TryParse(input, out var result);
 
-            return int.Parse(input);
+            return result;
         }
     }
 }
