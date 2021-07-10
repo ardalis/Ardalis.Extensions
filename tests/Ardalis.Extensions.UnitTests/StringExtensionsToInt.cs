@@ -14,5 +14,15 @@ namespace Ardalis.Extensions.UnitTests
 
             Assert.Equal(0, result);
         }
+
+        [Theory]
+        [InlineData("-9999999999999999999999999999999999999")]
+        [InlineData("9999999999999999999999999999999999999")]
+        public void ReturnsZeroIntGivenOutOfBoundsString(string input)
+        {
+            var result = input.ToInt();
+
+            Assert.Equal(0, result);
+        }
     }
 }
