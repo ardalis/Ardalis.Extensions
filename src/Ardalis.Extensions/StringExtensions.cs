@@ -31,8 +31,8 @@ namespace Ardalis.Extensions
         /// <summary>
         /// Converts string to int.
         /// </summary>
-        /// <param name="input">String to truncate.</param>
-        /// <returns>Convert to int.</returns>
+        /// <param name="input">String to int.</param>
+        /// <returns>int.</returns>
         public static int ToInt(this string input)
         {
             int.TryParse(input, out var result);
