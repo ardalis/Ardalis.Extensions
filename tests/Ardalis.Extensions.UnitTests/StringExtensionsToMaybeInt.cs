@@ -12,7 +12,7 @@ namespace Ardalis.Extensions.UnitTests
         {
             var result = input.ToMaybeInt();
 
-            Assert.Equal(null, result);
+            Assert.Null(result);
         }
 
         [Theory]
@@ -22,7 +22,7 @@ namespace Ardalis.Extensions.UnitTests
         {
             var result = input.ToMaybeInt();
 
-            Assert.Equal(null, result);
+            Assert.Null(result);
         }
     }
 }
