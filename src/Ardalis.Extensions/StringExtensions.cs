@@ -39,5 +39,21 @@ namespace Ardalis.Extensions
 
             return result;
         }
+
+        /// <summary>
+        /// Converts string to nullable int.
+        /// If cannot convert to int then return null.
+        /// </summary>
+        /// <param name="input">String to nullable int.</param>
+        /// <returns>nullable int.</returns>
+        public static int? ToMaybeInt(this string input)
+        {
+            if (!int.TryParse(input, out var result))
+            {
+                return null;
+            }
+
+            return result;
+        }
     }
 }
