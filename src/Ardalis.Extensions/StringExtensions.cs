@@ -33,16 +33,29 @@ namespace Ardalis.Extensions
         /// <summary>
         /// Converts string to int.
         /// </summary>
-        /// <param name="input">String to truncate.</param>
-        /// <returns>Convert to int.</returns>
+        /// <param name="input">String to int.</param>
+        /// <returns>int.</returns>
         public static int ToInt(this string input)
         {
-            if (string.IsNullOrEmpty(input))
+            int.TryParse(input, out var result);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Converts string to nullable int.
+        /// If cannot convert to int then return null.
+        /// </summary>
+        /// <param name="input">String to nullable int.</param>
+        /// <returns>nullable int.</returns>
+        public static int? ToMaybeInt(this string input)
+        {
+            if (!int.TryParse(input, out var result))
             {
-                return 0;
+                return null;
             }
 
-            return int.Parse(input);
+            return result;
         }
 
 

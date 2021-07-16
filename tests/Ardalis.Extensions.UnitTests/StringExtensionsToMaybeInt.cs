@@ -3,26 +3,26 @@ using Xunit;
 
 namespace Ardalis.Extensions.UnitTests
 {
-    public class StringExtensionsToInt
+    public class StringExtensionsToMaybeInt
     {
         [Theory]
         [InlineData(null)]
         [InlineData("")]
-        public void ReturnsZeroIntGivenNullOrEmptyString(string input)
+        public void ReturnsNullGivenNullOrEmptyString(string input)
         {
-            var result = input.ToInt();
+            var result = input.ToMaybeInt();
 
-            Assert.Equal(0, result);
+            Assert.Null(result);
         }
 
         [Theory]
         [InlineData("-9999999999999999999999999999999999999")]
         [InlineData("9999999999999999999999999999999999999")]
-        public void ReturnsZeroIntGivenOutOfBoundsString(string input)
+        public void ReturnsNullGivenOutOfBoundsString(string input)
         {
-            var result = input.ToInt();
+            var result = input.ToMaybeInt();
 
-            Assert.Equal(0, result);
+            Assert.Null(result);
         }
     }
 }
