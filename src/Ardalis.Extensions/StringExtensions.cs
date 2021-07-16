@@ -53,14 +53,16 @@ namespace Ardalis.Extensions
         /// </summary>
         /// <param name="plainText">String to encode.</param>
         /// <returns>The base64 encoded version of the string</returns>        
-        public static string Base64Encode(this string plainText)
+        public static string Base64Encode(this string plainText,
+            Encoding encoding = null)
         {
             if (string.IsNullOrEmpty(plainText))
             {
                 return string.Empty;
             }
 
-            var plainTextBytes = Encoding.UTF8.GetBytes(plainText);
+            encoding = encoding ?? Encoding.Default;
+            var plainTextBytes = encoding.GetBytes(plainText);
             return Convert.ToBase64String(plainTextBytes);
         }
 
@@ -72,7 +74,8 @@ namespace Ardalis.Extensions
         /// </summary>
         /// <param name="encodedString">String to encode.</param>
         /// <returns>The decoded version of the string</returns>        
-        public static string DecodeBase64String(this string encodedString)
+        public static string DecodeBase64String(this string encodedString,
+            Encoding encoding = null)
         {
             if (string.IsNullOrEmpty(encodedString))
             {
@@ -90,7 +93,8 @@ namespace Ardalis.Extensions
             }
 
             var data = Convert.FromBase64String(encodedString);
-            return Encoding.UTF8.GetString(data);
+            encoding = encoding ?? Encoding.Default;
+            return encoding.GetString(data);
         }
     }
 }
