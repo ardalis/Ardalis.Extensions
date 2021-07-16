@@ -1,3 +1,4 @@
+[![NuGet](https://img.shields.io/nuget/v/Ardalis.Extensions.svg)](https://www.nuget.org/packages/Ardalis.Extensions)[![NuGet](https://img.shields.io/nuget/dt/Ardalis.Extensions.svg)](https://www.nuget.org/packages/Ardalis.Extensions)
 [![publish Ardalis.Extensions to nuget](https://github.com/ardalis/Ardalis.Extensions/actions/workflows/publish.yml/badge.svg)](https://github.com/ardalis/Ardalis.Extensions/actions/workflows/publish.yml)
 
 # Ardalis.Extensions
