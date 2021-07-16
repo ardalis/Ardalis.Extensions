@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Ardalis.Extensions.UnitTests
 {
-    public class StringExtensionsTruncate
+    public class StringManipulationExtensionsTruncate
     {
         [Theory]
         [InlineData(null)]

@@ -7,7 +7,6 @@ namespace Ardalis.Extensions
 {
     public static class StringEncodingExtensions
     {
-
         /// <summary>
         /// Encodes string to base64.
         /// 

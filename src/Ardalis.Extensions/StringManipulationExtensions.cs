@@ -27,5 +27,20 @@ namespace Ardalis.Extensions
             int maxLength = Math.Min(input.Length, length);
             return input.Substring(0, maxLength);
         }
+
+        /// <summary>
+        /// Returns the rightmost N characters where length is N.
+        /// Returns the full string if it is less than N characters long.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="length"></param>
+        /// <returns></returns>
+        public static string Right(this string input, int length)
+        {
+            if(String.IsNullOrEmpty(input)) return string.Empty;
+            if(input.Length <= length) return input;
+
+            return input.Substring(input.Length - length);
+        }
     }
 }
