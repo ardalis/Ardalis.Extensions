@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -111,6 +112,32 @@ namespace Ardalis.Extensions
             var data = Convert.FromBase64String(encodedString);
             encoding = encoding ?? Encoding.Default;
             return encoding.GetString(data);
+        }
+
+        /// <summary>
+        /// Converts JSON string to the specified type
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        public static T FromJsonString<T>(this string t)
+        {
+            var value = JsonSerializer.Deserialize<T>(t);
+
+            return (T)Convert.ChangeType(value, typeof(T));
+        }
+
+        /// <summary>
+        /// Converts a Type to a JSON string
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        public static string ToJsonString<T>(this T t)
+        {
+            var value = JsonSerializer.Serialize(t);
+
+            return value;
         }
     }
 }
