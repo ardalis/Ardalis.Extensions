@@ -10,7 +10,7 @@ namespace Ardalis.Extensions.UnitTests
         [InlineData("")]
         public void ReturnsEmptyStringGivenNullOrEmptyString(string input)
         {
-            string result = input.Right(2);
+            string result = input.Reverse();
 
             Assert.Equal(String.Empty, result);
         }

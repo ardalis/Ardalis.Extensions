@@ -64,12 +64,12 @@ namespace Ardalis.Extensions
         /// <returns>Reversed <see cref="string"/>.</returns>
         public static string Reverse(this string input)
         {
-            if (string.IsNullOrEmpty(input)) return string.Empty;
+            if (string.IsNullOrEmpty(input)) return String.Empty;
             if (input.Length == 1) return input;
 
             // Tradeoff: we can check whether the input is a palindrome (= same when reversed)
             // to avoid extra allocation, but for the cost of extra time spent checking.
-            // Since most strings are not expected to be palindromes, we are simply not doing checking
+            // Since most strings are not expected to be palindromes, we are simply not checking
 
             // Alternative designs:
             // 1. Get input char array (String.ToCharArray), reverse it (Array.Reverse) and use it in string ctor
