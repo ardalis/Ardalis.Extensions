@@ -47,6 +47,17 @@ namespace Ardalis.Extensions
         }
 
         /// <summary>
+        /// Replaces all instances of a string in an input string with String.Empty.
+        /// </summary>
+        /// <param name="input">The string to modify.</param>
+        /// <param name="subStringToRemove">The string to remove/replace.</param>
+        /// <returns></returns>
+        public static string ReplaceWithEmpty(this string input, string subStringToRemove)
+        {
+            return input.Replace(subStringToRemove, String.Empty);
+        }
+
+        /// <summary>
         /// Reverses the input <see cref="string"/>.
         /// </summary>
         /// <param name="input">The input <see cref="string"/> to be reversed.</param>
