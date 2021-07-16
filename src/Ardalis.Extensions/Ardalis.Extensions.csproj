@@ -12,8 +12,8 @@
     <Summary>Some useful extension methods.</Summary>
     <RepositoryUrl>https://github.com/ardalis/Ardalis.Extensions</RepositoryUrl>
     <PackageTags>extensions extension method methods c# .net dotnet</PackageTags>
-    <PackageReleaseNotes>Added .ToInt via Shady Nagy</PackageReleaseNotes>
-    <Version>0.2.0</Version>
+    <PackageReleaseNotes>Added some more extensions and exceptions for ToInt are documented</PackageReleaseNotes>
+    <Version>0.3.0</Version>
     <AssemblyName>Ardalis.Extensions</AssemblyName>
     <PackageIconUrl>https://user-images.githubusercontent.com/782127/33497760-facf6550-d69c-11e7-94e4-b3856da259a9.png</PackageIconUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
