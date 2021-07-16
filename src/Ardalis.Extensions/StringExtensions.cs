@@ -35,11 +35,12 @@ namespace Ardalis.Extensions
         /// </summary>
         /// <param name="input">String to int.</param>
         /// <returns>int.</returns>
+        /// <exception cref="System.ArgumentNullException">Thrown when the input is null.</exception>
+        /// <exception cref="System.FormatException">Thrown when the input is not an integer string.</exception>
+        /// <exception cref="System.OverflowException">Thrown when the input is not an integer string.</exception>
         public static int ToInt(this string input)
         {
-            int.TryParse(input, out var result);
-
-            return result;
+            return int.Parse(input);
         }
 
         /// <summary>
