@@ -1,33 +1,27 @@
-﻿using System;
-using Xunit;
+﻿using Xunit;
 
 namespace Ardalis.Extensions.UnitTests
 {
-    public class IntExtensionsIsGreaterThan
+    public class IntComparisonExtensionsIsGreaterThan
     {
         [Theory]
-        [InlineData(7)]
-        public void IsGreaterThan_GivenNumberGreater_ShouldReturnsTrue(int number)
+        [InlineData(7, 5)]
+        [InlineData(2, 1)]
+        [InlineData(1, -1)]
+        public void ReturnsTrueGivenSmallerNumber(int number, int numberToCompare)
         {
-            var result = number.IsGreaterThan(5);
+            var result = number.IsGreaterThan(numberToCompare);
 
             Assert.True(result);
         }
 
         [Theory]
-        [InlineData(3)]
-        public void IsGreaterThan_GivenNumberLess_ShouldReturnsFalse(int number)
+        [InlineData(3,5)]
+        [InlineData(2,3)]
+        [InlineData(-3,-2)]
+        public void ReturnsFalseGivenLargerNumber(int number, int numberToCompare)
         {
-            var result = number.IsGreaterThan(4);
-
-            Assert.False(result);
-        }
-
-        [Theory]
-        [InlineData(2)]
-        public void IsGreaterThan_GivenNumberEqual_ShouldReturnsFalse(int number)
-        {
-            var result = number.IsGreaterThan(2);
+            var result = number.IsGreaterThan(numberToCompare);
 
             Assert.False(result);
         }
