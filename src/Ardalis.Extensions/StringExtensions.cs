@@ -65,6 +65,7 @@ namespace Ardalis.Extensions
         /// Source: https://stackoverflow.com/questions/11743160/how-do-i-encode-and-decode-a-base64-string
         /// </summary>
         /// <param name="plainText">String to encode.</param>
+        /// <param name="encoding">System.Text.Encoding to use; default to Encoding.Default.</param>
         /// <returns>The base64 encoded version of the string</returns>        
         public static string Base64Encode(this string plainText,
             Encoding encoding = null)
@@ -86,6 +87,7 @@ namespace Ardalis.Extensions
         /// Source: https://www.aspforums.net/Threads/567945/Check-if-Base64-string-is-Valid-or-not-using-C-and-VBNet-in-ASPNet/
         /// </summary>
         /// <param name="encodedString">String to encode.</param>
+        /// <param name="encoding">System.Text.Encoding to use; default to Encoding.Default.</param>
         /// <returns>The decoded version of the string</returns>        
         public static string DecodeBase64String(this string encodedString,
             Encoding encoding = null)
