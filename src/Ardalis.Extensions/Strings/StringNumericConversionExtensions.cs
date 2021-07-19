@@ -1,4 +1,4 @@
-﻿namespace Ardalis.Extensions
+﻿namespace Ardalis.Extensions.Strings
 {
     public static class StringNumericConversionExtensions
     {
