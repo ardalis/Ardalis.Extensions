@@ -1,4 +1,4 @@
-﻿namespace Ardalis.Extensions
+﻿namespace Ardalis.Extensions.Numbers
 {
     public static class IntComparisonExtensions
     {

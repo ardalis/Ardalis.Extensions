@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using Ardalis.Extensions.Strings;
+using Xunit;
 
 namespace Ardalis.Extensions.UnitTests
 {

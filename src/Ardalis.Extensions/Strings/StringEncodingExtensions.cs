@@ -3,7 +3,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 
-namespace Ardalis.Extensions
+namespace Ardalis.Extensions.Strings
 {
     public static class StringEncodingExtensions
     {
