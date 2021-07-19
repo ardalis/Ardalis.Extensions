@@ -1,3 +1,4 @@
+using Ardalis.Extensions.Strings;
 using System;
 using Xunit;
 
