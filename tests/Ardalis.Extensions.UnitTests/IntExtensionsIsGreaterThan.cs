@@ -14,6 +14,17 @@ namespace Ardalis.Extensions.UnitTests
             var result = number.IsGreaterThan(numberToCompare);
 
             Assert.True(result);
-        }                             
+        }
+
+        [Theory]
+        [InlineData(5, 7)]
+        [InlineData(1, 4)]
+        [InlineData(-1, 4)]
+        public void ReturnsFalseGivenBiggerNumber(int number, int numberToCompare)
+        {
+            var result = number.IsGreaterThan(numberToCompare);
+
+            Assert.False(result);
+        }
     }
 }
