@@ -17,9 +17,9 @@ namespace Ardalis.Extensions.UnitTests
         }
 
         [Theory]
-        [InlineData(3,5)]
-        [InlineData(2,3)]
-        [InlineData(-3,-2)]
+        [InlineData(3, 5)]
+        [InlineData(2, 3)]
+        [InlineData(-3, -2)]
         public void ReturnsFalseGivenLargerNumber(int number, int numberToCompare)
         {
             var result = number.IsGreaterThan(numberToCompare);
