@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using Ardalis.GuardClauses;
 
 namespace Ardalis.Extensions.Enumerables
@@ -18,6 +19,25 @@ namespace Ardalis.Extensions.Enumerables
             Guard.Against.Null(action, nameof(action));
 
             foreach (var item in input) action(item);
+        }
+
+        /// <summary>
+        /// Iterates over an enumerable and convert it into csv
+        /// </summary>
+        /// <typeparam name="T">The generic type of the enumerable</typeparam>
+        /// <param name="input">An IEnumerable<typeparamref name="T"/></param>
+        /// <returns></returns>
+        public static string ToCsv<T>(this IEnumerable<T> input)
+        {
+            StringBuilder csv;
+            if(input != null)
+            {
+                csv = new StringBuilder();
+                input.ForEach(i => csv.Append($"{i},"));
+                return csv.ToString(0, csv.Length - 1);
+            }
+
+            return string.Empty;
         }
     }
 }
