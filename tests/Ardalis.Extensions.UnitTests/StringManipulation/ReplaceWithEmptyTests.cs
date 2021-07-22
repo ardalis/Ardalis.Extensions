@@ -1,9 +1,9 @@
-﻿using Ardalis.Extensions.Strings;
+﻿using Ardalis.Extensions.StringManipulation;
 using Xunit;
 
-namespace Ardalis.Extensions.UnitTests
+namespace Ardalis.Extensions.UnitTests.StringManipulation
 {
-    public class StringManipulationExtensionsReplaceWithEmpty
+    public class ReplaceWithEmptyTests
     {
         [Theory]
         [InlineData("bbb", "a")]
