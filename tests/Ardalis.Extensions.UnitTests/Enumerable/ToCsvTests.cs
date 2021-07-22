@@ -1,4 +1,4 @@
-﻿using Ardalis.Extensions.Enumerables;
+﻿using Ardalis.Extensions.Enumerable;
 using System.Collections.Generic;
 using Xunit;
 

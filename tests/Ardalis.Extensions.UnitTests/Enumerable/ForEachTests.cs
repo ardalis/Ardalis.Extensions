@@ -1,6 +1,6 @@
 ﻿using System;
 using Xunit;
-using Ardalis.Extensions.Enumerables;
+using Ardalis.Extensions.Enumerable;
 using System.Collections.Generic;
 
 namespace Ardalis.Extensions.UnitTests.Enumerables

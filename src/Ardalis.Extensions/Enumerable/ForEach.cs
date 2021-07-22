@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Ardalis.Extensions.Enumerables
+namespace Ardalis.Extensions.Enumerable
 {
     public static partial class EnumerableExtensionMethods
     {

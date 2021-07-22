@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace Ardalis.Extensions.Enumerables
+namespace Ardalis.Extensions.Enumerable
 {
     public static partial class EnumerableExtensionMethods
     {
