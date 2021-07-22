@@ -1,14 +1,10 @@
-﻿using System;
+﻿using Ardalis.Extensions.Enumerable;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
-using Ardalis.Extensions.Enumerables;
 
 namespace Ardalis.Extensions.UnitTests.Enumerables
 {
-    public class EnumerableToCsv
+    public class ToCsvTests
     {
         [Fact]
         public void ReturnsEmptyStringGivenEmptyEnumerable()
