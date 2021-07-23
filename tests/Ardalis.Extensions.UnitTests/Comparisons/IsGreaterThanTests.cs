@@ -1,4 +1,4 @@
-﻿using Ardalis.Extensions.Comparable;
+﻿using Ardalis.Extensions.Comparisons;
 using Xunit;
 
 
