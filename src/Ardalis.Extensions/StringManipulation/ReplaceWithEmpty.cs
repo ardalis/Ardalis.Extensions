@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Ardalis.Extensions.StringManipulation
+﻿namespace Ardalis.Extensions.StringManipulation
 {
     public static partial class StringManipulationExtensions
     {
@@ -12,7 +10,7 @@ namespace Ardalis.Extensions.StringManipulation
         /// <returns></returns>
         public static string ReplaceWithEmpty(this string input, string subStringToRemove)
         {
-            return input.Replace(subStringToRemove, String.Empty);
+            return input.Replace(subStringToRemove, string.Empty);
         }
     }
 }
