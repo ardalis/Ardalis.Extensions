@@ -2,7 +2,7 @@
 using Xunit;
 
 
-namespace Ardalis.Extensions.UnitTests.Camparable
+namespace Ardalis.Extensions.UnitTests.Comparisons
 {
     public class IsGreaterThanTests
     {
