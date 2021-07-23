@@ -25,7 +25,7 @@ namespace Ardalis.Extensions.UnitTests.StringManipulation
         [Theory]
         [InlineData("!@@#$#$%%^", "!@@#$#$%%^")]
         [InlineData("\"'", "\"'")]
-        public void ReturnsNotSwappedCaseStringIfspecialCharacter(string input, string sawppedCaseInput)
+        public void ReturnsNotSwappedCaseStringIfSpecialCharacter(string input, string sawppedCaseInput)
         {
             Assert.Equal(sawppedCaseInput, input.SwapCase());
         }
