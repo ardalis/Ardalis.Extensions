@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Ardalis.Extensions.Enumerable
 {
-    public static partial class EnumerableExtensionMethods
+    public static partial class EnumerableExtensions
     {
         /// <summary>
         /// Iterates over an enumerable and convert it into csv

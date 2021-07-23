@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Ardalis.Extensions.Enumerable
 {
-    public static partial class EnumerableExtensionMethods
+    public static partial class EnumerableExtensions
     {
         /// <summary>
         /// Iterates over an enumerable and executes an Action on each item.

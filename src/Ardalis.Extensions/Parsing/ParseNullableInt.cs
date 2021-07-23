@@ -1,6 +1,6 @@
 ﻿namespace Ardalis.Extensions.Parsing
 {
-    public static partial class NumberParsingExtensionMethods
+    public static partial class NumberParsingExtensions
     {
         /// <summary>
         /// Converts string to nullable int.

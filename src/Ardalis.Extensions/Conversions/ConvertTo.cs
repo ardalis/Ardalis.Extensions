@@ -2,7 +2,7 @@
 
 namespace Ardalis.Extensions.Conversions
 {
-    public static partial class ConvertibleExtensionMethods
+    public static partial class ConvertibleExtensions
     {
         /// <summary>
         /// Converts an IConvertable struct to the desired output Type.

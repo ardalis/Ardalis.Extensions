@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Ardalis.Extensions.Linq
 {
-    public static partial class LinqExtensionMethods
+    public static partial class LinqExtensions
     {
 
         /// <summary>
