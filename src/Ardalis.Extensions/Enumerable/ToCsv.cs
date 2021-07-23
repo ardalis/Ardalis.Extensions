@@ -17,8 +17,7 @@ namespace Ardalis.Extensions.Enumerable
             {
                 return string.Empty;
             }
-
-            
+                        
             StringBuilder csvBuilder = new StringBuilder();
 
             input.ForEach(i => csvBuilder.Append($"{i},"));
