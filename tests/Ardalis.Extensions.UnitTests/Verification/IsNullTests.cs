@@ -2,7 +2,7 @@
 using System;
 using Xunit;
 
-namespace Ardalis.Extensions.UnitTests.Checking
+namespace Ardalis.Extensions.UnitTests.Verification
 {
     public class IsNullTests
     {

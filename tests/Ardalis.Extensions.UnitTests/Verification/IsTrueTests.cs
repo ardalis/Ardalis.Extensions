@@ -1,7 +1,7 @@
 ﻿using Ardalis.Extensions.Verification;
 using Xunit;
 
-namespace Ardalis.Extensions.UnitTests.Checking
+namespace Ardalis.Extensions.UnitTests.Verification
 {
     public class IsTrueTests
     {
