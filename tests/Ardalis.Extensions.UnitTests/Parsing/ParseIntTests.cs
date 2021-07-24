@@ -1,15 +1,16 @@
+using Ardalis.Extensions.Parsing;
 using System;
 using Xunit;
 
 namespace Ardalis.Extensions.UnitTests
 {
-    public class StringExtensionsToInt
+    public class ParseIntTests
     {
         [Fact]
         public void ThrowsExceptionGivenNullInput()
         {
             string input = null;
-            Action action = () => input.ToInt();
+            Action action = () => input.ParseInt();
 
             Assert.Throws<ArgumentNullException>(action);
         }
@@ -18,7 +19,7 @@ namespace Ardalis.Extensions.UnitTests
         public void ThrowsExceptionGivenEmptyInput()
         {
             string input = "";
-            Action action = () => input.ToInt();
+            Action action = () => input.ParseInt();
 
             Assert.Throws<FormatException>(action);
         }
@@ -27,7 +28,7 @@ namespace Ardalis.Extensions.UnitTests
         public void ThrowsExceptionGivenInputTooBig()
         {
             string input = "9999999999999999999999999999999999999";
-            Action action = () => input.ToInt();
+            Action action = () => input.ParseInt();
 
             Assert.Throws<OverflowException>(action);
         }
@@ -36,7 +37,7 @@ namespace Ardalis.Extensions.UnitTests
         public void ThrowsExceptionGivenInputTooSmall()
         {
             string input = "-9999999999999999999999999999999999999";
-            Action action = () => input.ToInt();
+            Action action = () => input.ParseInt();
 
             Assert.Throws<OverflowException>(action);
         }

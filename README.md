@@ -8,7 +8,19 @@ Some random C# extension methods I've found useful. Published as Ardalis.Extensi
 
 ## Conventions
 
-Methods that go together or have a common purpose should be placed into their own separate file named accordingly. All classes that have extension methods in them should have an `Extensions` suffix. Only one class per file.
+- Extension methods are grouped into folders based on similar purpose.
+- Folder nesting should match class namespaces.
+  - `Ardalis.Extensions.Parsing`
+  -  `Ardalis.Extensions.Encoding.Base64`
+- One extension method class per folder.
+- Extension methods classes should have an `Extensions` suffix.
+- Classes should be made [partial](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods#partial-classes).
+- One extension method per file.
+- Overloads should be placed in the same file.
+- File names should be the contained extension method's name.
+- Tests should be provided for each extension method and overload.
+- Test classes should have a `Tests` suffix.
+
 
 ## Roadmap
 

@@ -1,9 +1,9 @@
-using System;
+using Ardalis.Extensions.StringManipulation;
 using Xunit;
 
-namespace Ardalis.Extensions.UnitTests
+namespace Ardalis.Extensions.UnitTests.StringManipulation
 {
-    public class StringManipulationExtensionsTruncate
+    public class TruncateTests
     {
         [Theory]
         [InlineData(null)]
@@ -12,7 +12,7 @@ namespace Ardalis.Extensions.UnitTests
         {
             var result = input.Truncate(5);
 
-            Assert.Equal(String.Empty, result);
+            Assert.Equal(string.Empty, result);
         }
     }
 }

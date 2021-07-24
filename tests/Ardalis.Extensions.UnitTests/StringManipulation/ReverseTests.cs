@@ -1,9 +1,10 @@
 ﻿using System;
 using Xunit;
+using Ardalis.Extensions.StringManipulation;
 
 namespace Ardalis.Extensions.UnitTests
 {
-    public class StringManipulationExtensionsReverse
+    public class ReverseTests
     {
         [Theory]
         [InlineData(null)]
