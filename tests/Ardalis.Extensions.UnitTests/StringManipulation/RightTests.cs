@@ -1,10 +1,10 @@
-﻿using Ardalis.Extensions.Strings;
+﻿using Ardalis.Extensions.StringManipulation;
 using System;
 using Xunit;
 
-namespace Ardalis.Extensions.UnitTests
+namespace Ardalis.Extensions.UnitTests.StringManipulation
 {
-    public class StringManipulationExtensionsRight
+    public class RightTests
     {
         [Theory]
         [InlineData(null)]
@@ -13,7 +13,7 @@ namespace Ardalis.Extensions.UnitTests
         {
             var result = input.Right(2);
 
-            Assert.Equal(String.Empty, result);
+            Assert.Equal(string.Empty, result);
         }
 
         [Theory]

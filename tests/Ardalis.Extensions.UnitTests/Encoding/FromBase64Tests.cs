@@ -1,17 +1,17 @@
-using Ardalis.Extensions.Strings;
+using Ardalis.Extensions.Encoding.Base64;
 using Xunit;
 
 namespace Ardalis.Extensions.UnitTests
 {
-    public class StringExtensionsToBase64
+    public class FromBase64Tests
     {
         [Theory]
-        [InlineData("Hello,World")]
+        [InlineData("SGVsbG8sV29ybGQ=")]
         public void ReturnsCorrectBase64RepresentationOfString(string input)
         {
-            const string expectedValue = "SGVsbG8sV29ybGQ=";
+            const string expectedValue = "Hello,World";
             
-            var result = input.Base64Encode();
+            var result = input.FromBase64();
 
             Assert.Equal(expectedValue, result);
         }
@@ -23,7 +23,7 @@ namespace Ardalis.Extensions.UnitTests
         {
             const string expectedValue = "";
             
-            var result = input.Base64Encode();
+            var result = input.FromBase64();
 
             Assert.Equal(expectedValue, result);
         }

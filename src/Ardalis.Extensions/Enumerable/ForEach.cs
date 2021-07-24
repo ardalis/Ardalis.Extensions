@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Ardalis.GuardClauses;
+using System;
 using System.Collections.Generic;
-using Ardalis.GuardClauses;
 
-namespace Ardalis.Extensions.Enumerables
+namespace Ardalis.Extensions.Enumerable
 {
-    public static partial class EnumerableExtensions
+    public static partial class EnumerableExtensionMethods
     {
         /// <summary>
         /// Iterates over an enumerable and executes a function on each item.
