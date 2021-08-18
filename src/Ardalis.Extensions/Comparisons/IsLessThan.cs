@@ -1,4 +1,4 @@
-﻿namespace Ardalis.Extensions.Comparable
+﻿namespace Ardalis.Extensions.Comparisons
 {
     public static partial class CamparableExtensions
     {

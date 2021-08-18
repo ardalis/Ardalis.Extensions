@@ -1,6 +1,6 @@
 ﻿namespace Ardalis.Extensions.Parsing
 {
-    public static partial class ParsingExtensionMethods
+    public static partial class ParsingExtensions
     {
         /// <summary>
         /// Converts string to int.

@@ -1,8 +1,8 @@
-﻿using Ardalis.Extensions.Comparable;
+﻿using Ardalis.Extensions.Comparisons;
 using Xunit;
 
 
-namespace Ardalis.Extensions.UnitTests.Camparable
+namespace Ardalis.Extensions.UnitTests.Comparisons
 {
     public class IsGreaterThanTests
     {

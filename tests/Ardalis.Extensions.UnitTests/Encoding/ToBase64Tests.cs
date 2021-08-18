@@ -13,8 +13,6 @@ namespace Ardalis.Extensions.UnitTests
             
             var result = input.ToBase64();
 
-            Ardalis.Extensions.Encoding.Base64.Base64ExtensionMethods.ToBase64("");
-
             Assert.Equal(expectedValue, result);
         }
         

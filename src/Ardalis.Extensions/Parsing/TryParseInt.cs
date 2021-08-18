@@ -1,6 +1,6 @@
 ﻿namespace Ardalis.Extensions.Parsing
 {
-    public static partial class NumberParsingExtensionMethods
+    public static partial class ParsingExtensions
     {
         /// <summary>
         /// Converts the string representation of a number to its 32-bit signed integer equivalent.
