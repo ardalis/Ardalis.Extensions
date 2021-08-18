@@ -111,11 +111,11 @@
         [InlineData(2, 2, 0)]
         [InlineData(1, -1, 2)]
         [InlineData(1, -2, 3)]
-        [InlineData(0, short.MaxValue, short.MaxValue)]
-        [InlineData(short.MaxValue, 1, 32768)]
-        [InlineData(short.MinValue, -1, -32769)]
-        [InlineData(1, short.MaxValue, 32768)]
-        [InlineData(-1, short.MinValue, -32769)]
+        [InlineData(0, short.MaxValue, -32767)]
+        [InlineData(short.MaxValue, 1, 32766)]
+        [InlineData(short.MinValue, -1, -32767)]
+        [InlineData(1, short.MaxValue, -32766)]
+        [InlineData(-1, short.MinValue, 32767)]
         public void Minus_ShortToShort_ReturnsExpectedResult(short minuend, short subtrahend, int expectedDifference)
         {
             // Arrange
@@ -135,11 +135,11 @@
         [InlineData(2, 2, 0)]
         [InlineData(1, -1, 2)]
         [InlineData(1, -2, 3)]
-        [InlineData(0, long.MaxValue, long.MaxValue)]
-        [InlineData(short.MaxValue, 1, 32768)]
-        [InlineData(short.MinValue, -1, -32769)]
-        [InlineData(1, long.MaxValue, long.MinValue)]
-        [InlineData(-1, long.MinValue, long.MaxValue)]
+        [InlineData(0, long.MaxValue, -9223372036854775807)]
+        [InlineData(short.MaxValue, 1, 32766)]
+        [InlineData(short.MinValue, -1, -32767)]
+        [InlineData(1, long.MaxValue, -9223372036854775806)]
+        [InlineData(-1, long.MinValue, 9223372036854775807)]
         public void Minus_LongToShort_ReturnsExpectedResult(short minuend, long subtrahend, long expectedDifference)
         {
             // Arrange
@@ -161,11 +161,11 @@
         [InlineData(2, 2, 0)]
         [InlineData(1, -1, 2)]
         [InlineData(1, -2, 3)]
-        [InlineData(0, int.MaxValue, int.MaxValue)]
-        [InlineData(long.MaxValue, 1, long.MinValue)]
-        [InlineData(long.MinValue, -1, long.MaxValue)]
-        [InlineData(1, int.MaxValue, 2147483648)]
-        [InlineData(-1, int.MinValue, -2147483649)]
+        [InlineData(0, int.MaxValue, -2147483647)]
+        [InlineData(long.MaxValue, 1, 9223372036854775806)]
+        [InlineData(long.MinValue, -1, -9223372036854775807)]
+        [InlineData(1, int.MaxValue, -2147483646)]
+        [InlineData(-1, int.MinValue, 2147483647)]
         public void Minus_IntToLong_ReturnsExpectedResult(long minuend, int subtrahend, long expectedDifference)
         {
             // Arrange
@@ -185,11 +185,11 @@
         [InlineData(2, 2, 0)]
         [InlineData(1, -1, 2)]
         [InlineData(1, -2, 3)]
-        [InlineData(0, short.MaxValue, short.MaxValue)]
-        [InlineData(short.MaxValue, 1, 32768)]
-        [InlineData(short.MinValue, -1, -32769)]
-        [InlineData(1, short.MaxValue, 32768)]
-        [InlineData(-1, short.MinValue, -32769)]
+        [InlineData(0, short.MaxValue, -32767)]
+        [InlineData(short.MaxValue, 1, 32766)]
+        [InlineData(short.MinValue, -1, -32767)]
+        [InlineData(1, short.MaxValue, -32766)]
+        [InlineData(-1, short.MinValue, 32767)]
         public void Minus_ShortToLong_ReturnsExpectedResult(long minuend, short subtrahend, long expectedDifference)
         {
             // Arrange
@@ -209,10 +209,10 @@
         [InlineData(2, 2, 0)]
         [InlineData(1, -1, 2)]
         [InlineData(1, -2, 3)]
-        [InlineData(0, long.MaxValue, long.MaxValue)]
-        [InlineData(short.MaxValue, 1, 32768)]
-        [InlineData(short.MinValue, -1, -32769)]
-        [InlineData(1, long.MaxValue, long.MinValue)]
+        [InlineData(0, long.MaxValue, -9223372036854775807)]
+        [InlineData(long.MaxValue, 1, 9223372036854775806)]
+        [InlineData(long.MinValue, -1, -9223372036854775807)]
+        [InlineData(1, long.MaxValue, -9223372036854775806)]
         [InlineData(-1, long.MinValue, long.MaxValue)]
         public void Minus_LongToLong_ReturnsExpectedResult(long minuend, long subtrahend, long expectedDifference)
         {
