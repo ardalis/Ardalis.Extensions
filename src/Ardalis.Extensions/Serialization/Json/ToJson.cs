@@ -2,7 +2,7 @@
 
 namespace Ardalis.Extensions.Serialization.Json
 {
-    public static partial class JsonExtensionMethods
+    public static partial class JsonExtensions
     {
         /// <summary>
         /// Converts a Type to a JSON string

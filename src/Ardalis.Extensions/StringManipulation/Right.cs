@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Ardalis.Extensions.StringManipulation
+﻿namespace Ardalis.Extensions.StringManipulation
 {
     public static partial class StringManipulationExtensions
     {
@@ -14,8 +12,15 @@ namespace Ardalis.Extensions.StringManipulation
         /// <returns></returns>
         public static string Right(this string input, int length)
         {
-            if(String.IsNullOrEmpty(input)) return string.Empty;
-            if(input.Length <= length) return input;
+            if (string.IsNullOrEmpty(input))
+            {
+                return string.Empty;
+            }
+
+            if (input.Length <= length)
+            {
+                return input;
+            }
 
             return input.Substring(input.Length - length);
         }
