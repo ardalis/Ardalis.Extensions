@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace Ardalis.Extensions.Serialization.Json
 {
-    public static partial class JsonExtensionMethods
+    public static partial class JsonExtensions
     {
         /// <summary>
         /// Converts JSON string to the specified type

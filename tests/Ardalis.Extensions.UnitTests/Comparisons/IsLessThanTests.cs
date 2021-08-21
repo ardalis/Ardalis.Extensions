@@ -1,7 +1,7 @@
-﻿using Ardalis.Extensions.Comparable;
+﻿using Ardalis.Extensions.Comparisons;
 using Xunit;
 
-namespace Ardalis.Extensions.Numbers
+namespace Ardalis.Extensions.UnitTests.Comparisons
 {
     public class IsLessThanTests
     {

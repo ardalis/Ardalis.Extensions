@@ -1,8 +1,7 @@
-﻿using System;
-using System.Text.RegularExpressions;
-
-namespace Ardalis.Extensions.StringManipulation
+﻿namespace Ardalis.Extensions.StringManipulation
 {
+    using System;
+
     public static partial class StringManipulationExtensions
     {
         /// <summary>

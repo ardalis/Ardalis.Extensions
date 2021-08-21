@@ -4,7 +4,7 @@ namespace Ardalis.Extensions.Encoding.Base64
 {
     using System.Text; // This prevents the Encoding namespace conflict in this class
 
-    public static partial class Base64ExtensionMethods
+    public static partial class Base64Extensions
     {
         /// <summary>
         /// Encodes string to base64.
