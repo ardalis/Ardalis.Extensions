@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Ardalis.Extensions.Verification
+﻿namespace Ardalis.Extensions.Verification
 {
-    public static partial class CheckingExtensionMethods
+    public static partial class VerificationExtensions
     {
         /// <summary>
         /// Checks if a given condition is true

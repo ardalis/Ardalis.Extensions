@@ -5,19 +5,19 @@ namespace Ardalis.Extensions.UnitTests.Verification
 {
     public class IsTrueTests
     {
-        [Theory]
-        [InlineData(true)]
-        public void ReturnsTrueGivenTrueCondition(bool condition)
+        [Fact]
+        public void ReturnsTrueGivenTrueCondition()
         {
+            var condition = 1 == 1;
             var result = condition.IsTrue();
 
             Assert.True(result);
         }
 
-        [Theory]
-        [InlineData(1 == 2)]
-        public void ReturnsFalseGivenFalseCondition(bool condition)
+        [Fact]
+        public void ReturnsFalseGivenFalseCondition()
         {
+            var condition = 1 == 2;
             var result = condition.IsTrue();
 
             Assert.False(result);

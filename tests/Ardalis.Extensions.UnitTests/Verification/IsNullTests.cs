@@ -1,5 +1,4 @@
 ﻿using Ardalis.Extensions.Verification;
-using System;
 using Xunit;
 
 namespace Ardalis.Extensions.UnitTests.Verification
