@@ -45,11 +45,13 @@ namespace Ardalis.Extensions.UnitTests.Linq
         [Fact]
         public void ResultsCanBeUsedWithOtherLinqExpressions()
         {
+            //Arrange
             IEnumerable<int> input = new List<int> { 1, 2, 3 };
 
             var sum = 0;
             Func<int, int> operation = (int x) => sum += x;
 
+            //Act
             var results = input.Perform(operation).Reverse().ToList();
 
             var inspectors = new Action<int>[]{
@@ -57,6 +59,7 @@ namespace Ardalis.Extensions.UnitTests.Linq
                 (e) => Assert.Equal(3, e),
                 (e) => Assert.Equal(1, e)};
 
+            //Assert
             Assert.Collection(results, inspectors);
         }
     }
