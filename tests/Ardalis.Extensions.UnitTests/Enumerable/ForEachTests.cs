@@ -1,44 +1,43 @@
 ﻿using System;
-using Xunit;
-using Ardalis.Extensions.Enumerable;
 using System.Collections.Generic;
+using Ardalis.Extensions.Enumerable;
+using Xunit;
 
-namespace Ardalis.Extensions.UnitTests.Enumerables
+namespace Ardalis.Extensions.UnitTests.Enumerables;
+
+public class ForEachTests
 {
-    public class ForEachTests
-    {
-        [Fact]
-        public void ThrowsGivenNullInput()
-        {
-            IEnumerable<object> enumeration = null;
+  [Fact]
+  public void ThrowsGivenNullInput()
+  {
+    IEnumerable<object> enumeration = null;
 
-            Action action = () => enumeration.ForEach(x => x.ToString());
+    Action action = () => enumeration.ForEach(x => x.ToString());
 
-            Assert.Throws<ArgumentNullException>(action);
-        }
+    Assert.Throws<ArgumentNullException>(action);
+  }
 
-        [Fact]
-        public void ThrowsGivenNullAction()
-        {
-            IEnumerable<object> enumeration = new List<object>();
+  [Fact]
+  public void ThrowsGivenNullAction()
+  {
+    IEnumerable<object> enumeration = new List<object>();
 
-            Action<object> enumAction = null;
+    Action<object> enumAction = null;
 
-            Action action = () => enumeration.ForEach(enumAction);
+    Action action = () => enumeration.ForEach(enumAction);
 
-            Assert.Throws<ArgumentNullException>(action);
-        }
+    Assert.Throws<ArgumentNullException>(action);
+  }
 
-        [Fact]
-        public void ExecutesActionOncePerItem()
-        {
-            IEnumerable<int> input = new List<int> { 1, 2, 3 };
-            var sum = 0;
-            Action<int> action = (int x) => sum += x;
+  [Fact]
+  public void ExecutesActionOncePerItem()
+  {
+    IEnumerable<int> input = new List<int> { 1, 2, 3 };
+    var sum = 0;
+    Action<int> action = (int x) => sum += x;
 
-            input.ForEach(action);
+    input.ForEach(action);
 
-            Assert.Equal(6, sum);
-        }
-    }
+    Assert.Equal(6, sum);
+  }
 }

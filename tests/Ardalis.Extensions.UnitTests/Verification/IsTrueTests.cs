@@ -1,26 +1,25 @@
 ﻿using Ardalis.Extensions.Verification;
 using Xunit;
 
-namespace Ardalis.Extensions.UnitTests.Verification
+namespace Ardalis.Extensions.UnitTests.Verification;
+
+public class IsTrueTests
 {
-    public class IsTrueTests
-    {
-        [Fact]
-        public void ReturnsTrueGivenTrueCondition()
-        {
-            var condition = 1 == 1;
-            var result = condition.IsTrue();
+  [Fact]
+  public void ReturnsTrueGivenTrueCondition()
+  {
+    var condition = 1 == 1;
+    var result = condition.IsTrue();
 
-            Assert.True(result);
-        }
+    Assert.True(result);
+  }
 
-        [Fact]
-        public void ReturnsFalseGivenFalseCondition()
-        {
-            var condition = 1 == 2;
-            var result = condition.IsTrue();
+  [Fact]
+  public void ReturnsFalseGivenFalseCondition()
+  {
+    var condition = 1 == 2;
+    var result = condition.IsTrue();
 
-            Assert.False(result);
-        }
-    }
+    Assert.False(result);
+  }
 }

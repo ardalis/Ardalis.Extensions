@@ -1,34 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>Ardalis.Extensions</PackageId>
-    <Title>Ardalis.Extensions</Title>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Authors>Steve Smith (@ardalis)</Authors>
-    <Company>Ardalis.com</Company>
-    <PackageProjectUrl>https://github.com/ardalis/Ardalis.Extensions</PackageProjectUrl>
-    <Description>Some useful extension methods.</Description>
-    <Summary>Some useful extension methods.</Summary>
-    <RepositoryUrl>https://github.com/ardalis/Ardalis.Extensions</RepositoryUrl>
-    <PackageTags>extensions extension method methods c# .net dotnet</PackageTags>
-    <PackageReleaseNotes>Added more LINQ and math extensions</PackageReleaseNotes>
-    <Version>0.8.0</Version>
-    <AssemblyName>Ardalis.Extensions</AssemblyName>
-    <PackageIconUrl>https://user-images.githubusercontent.com/782127/33497760-facf6550-d69c-11e7-94e4-b3856da259a9.png</PackageIconUrl>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-    <LangVersion>8.0</LangVersion>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>    
-  </PropertyGroup>
-  
-  <ItemGroup>
-    <None Include="LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="Ardalis.GuardClauses" Version="3.2.0" />
-    <PackageReference Include="System.Text.Json" Version="5.0.2" />
-  </ItemGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <PackageId>Ardalis.Extensions</PackageId>
+        <Title>Ardalis.Extensions</Title>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <Authors>Steve Smith (@ardalis)</Authors>
+        <Company>Ardalis.com</Company>
+        <PackageProjectUrl>https://github.com/ardalis/Ardalis.Extensions</PackageProjectUrl>
+        <Description>Some useful extension methods.</Description>
+        <Summary>Some useful extension methods.</Summary>
+        <RepositoryUrl>https://github.com/ardalis/Ardalis.Extensions</RepositoryUrl>
+        <PackageTags>extensions extension method methods c# .net dotnet</PackageTags>
+        <PackageReleaseNotes>Added more LINQ and math extensions</PackageReleaseNotes>
+        <Version>0.8.0</Version>
+        <AssemblyName>Ardalis.Extensions</AssemblyName>
+        <PackageIconUrl>https://user-images.githubusercontent.com/782127/33497760-facf6550-d69c-11e7-94e4-b3856da259a9.png</PackageIconUrl>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+        <LangVersion>10.0</LangVersion>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Ardalis.GuardClauses" Version="3.2.0" />
+        <PackageReference Include="System.Text.Json" Version="5.0.2" />
+    </ItemGroup>
 </Project>
