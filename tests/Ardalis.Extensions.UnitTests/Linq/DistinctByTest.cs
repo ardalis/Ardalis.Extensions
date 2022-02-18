@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Ardalis.Extensions.Linq;
 using Xunit;
 
 namespace Ardalis.Extensions.UnitTests.Linq;
 
+// These tests now target the built-in LINQ DistinctBy extension, not an extension in this package.
+// This extension was added in .NET 5 and has been removed from this package
+// https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.distinctby?view=net-6.0&viewFallbackFrom=net-5.0
 public record User(string Name);
 
 public class DistinctByTest
