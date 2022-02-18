@@ -1,29 +1,28 @@
-﻿using Ardalis.Extensions.Enumerable;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Ardalis.Extensions.Enumerable;
 using Xunit;
 
-namespace Ardalis.Extensions.UnitTests.Enumerables
+namespace Ardalis.Extensions.UnitTests.Enumerables;
+
+public class ToCsvTests
 {
-    public class ToCsvTests
-    {
-        [Fact]
-        public void ReturnsEmptyStringGivenEmptyEnumerable()
-        {
-            IEnumerable<int> enumaration = null;
+  [Fact]
+  public void ReturnsEmptyStringGivenEmptyEnumerable()
+  {
+    IEnumerable<int> enumaration = null;
 
-            var result = enumaration.ToCsv();
+    var result = enumaration.ToCsv();
 
-            Assert.Equal(string.Empty, result);
-        }
+    Assert.Equal(string.Empty, result);
+  }
 
-        [Fact]
-        public void ReturnsCsvGivenEnumerable()
-        {
-            IEnumerable<int> enumaration = new List<int>() { 1, 2, 3, 4, 5 };
+  [Fact]
+  public void ReturnsCsvGivenEnumerable()
+  {
+    IEnumerable<int> enumaration = new List<int>() { 1, 2, 3, 4, 5 };
 
-            var result = enumaration.ToCsv();
+    var result = enumaration.ToCsv();
 
-            Assert.Equal("1,2,3,4,5", result);
-        }
-    }
+    Assert.Equal("1,2,3,4,5", result);
+  }
 }
