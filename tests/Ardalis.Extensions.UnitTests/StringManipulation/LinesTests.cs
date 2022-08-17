@@ -1,6 +1,6 @@
 using System.Linq;
-using Ardalis.Extensions.StringManipulation;
 using Xunit;
+using Ardalis.Extensions.StringManipulation;
 
 public class LinesTests
 {
