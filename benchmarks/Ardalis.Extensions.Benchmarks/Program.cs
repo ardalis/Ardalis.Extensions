@@ -1,3 +1,4 @@
+using System;
 using BenchmarkDotNet.Running;
 
 namespace Ardalis.Extensions.Benchmarks
