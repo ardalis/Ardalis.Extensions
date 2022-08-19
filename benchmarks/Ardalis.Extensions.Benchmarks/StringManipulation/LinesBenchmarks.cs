@@ -1,5 +1,4 @@
-﻿
-using System.IO;
+﻿using System.IO;
 using BenchmarkDotNet.Attributes;
 using Ardalis.Extensions.StringManipulation;
 using System.Collections.Generic;
@@ -39,7 +38,7 @@ public class LinesBenchmarks
   }
 }
 
-static class BenchmarksStringExtensions
+static class LinesBenchmarksExtensions
 {
   public static IEnumerable<string> LinesSplit(this string text)
   {
@@ -85,5 +84,4 @@ static class BenchmarksStringExtensions
       currentIndex++;
     }
   }
-
 }
