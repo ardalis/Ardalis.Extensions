@@ -6,16 +6,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 
-namespace Ardalis.Extensions.Benchmarks;
+namespace Ardalis.Extensions.Benchmarks.StringManipulation;
 
 [MemoryDiagnoser]
-public class Benchmarks
+public class LinesBenchmarks
 {
   private string Bible { get; set; }
 
   [Params(1, 5, 10, 15)]
   public int N { get; set; }
-  public Benchmarks()
+  public LinesBenchmarks()
   {
     Bible = File.ReadAllText("bible.txt");
   }
