@@ -20,6 +20,21 @@ Some random C# extension methods I've found useful. Published as Ardalis.Extensi
 - File names should be the contained extension method's name.
 - Tests should be provided for each extension method and overload.
 - Test classes should have a `Tests` suffix.
+- Benchmark classe should have a `Benchmarks` suffix.
+
+## Benchmarks
+
+To run the all of the benchmarks, run the following command from the benchmarks project folder:
+
+```ps
+dotnet run -c Release
+```
+
+You can also run the benchmarks individually by running the following command from the benchmarks project folder:
+
+```ps
+dotnet run -c Release --filter *BenchmarkClassName*
+```
 
 
 ## Roadmap
