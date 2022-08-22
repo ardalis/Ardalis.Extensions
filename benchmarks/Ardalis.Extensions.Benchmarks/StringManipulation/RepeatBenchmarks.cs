@@ -1,38 +1,39 @@
-﻿using BenchmarkDotNet.Attributes;
+﻿using System.Text;
+using BenchmarkDotNet.Attributes;
 using Ardalis.Extensions.StringManipulation;
-using System.Text;
 
 namespace Ardalis.Extensions.Benchmarks.StringManipulation;
 
 [MemoryDiagnoser]
+[ReturnValueValidator(failOnError: true)]
 public class RepeatBenchmarks
 {
-  [Params(1, 10, 100, 1000)]
+  [Params(1u, 10u, 100u, 1000u)]
   public uint N { get; set; }
   
 
   [Benchmark(Baseline = true)]
   public string RepeatLinq()
   {
-    return "abs".RepeatLinq(N);
+    return "abc".RepeatLinq(N);
   }
 
   [Benchmark]
   public string RepeatStrBuilder()
   {
-    return "abs".RepeatStrBuilder(N);
+    return "abc".RepeatStrBuilder(N);
   }
 
   [Benchmark]
   public string RepeatArray()
   {
-    return "abs".RepeatArray(N);
+    return "abc".RepeatArray(N);
   }
 
   [Benchmark]
   public string RepeatSpan()
   {
-    return "abs".Repeat(N);
+    return "abc".Repeat(N);
   }
 }
 
@@ -56,6 +57,6 @@ static class RepeatBenchmarksExtensions
       text.CopyTo(0, arr, i * text.Length, text.Length);
     }
 
-    return arr.ToString();
+    return new string(arr);
   }
 }

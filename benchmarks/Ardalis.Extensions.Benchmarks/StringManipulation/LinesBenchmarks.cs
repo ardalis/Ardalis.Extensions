@@ -1,13 +1,14 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using BenchmarkDotNet.Attributes;
 using Ardalis.Extensions.StringManipulation;
-using System.Collections.Generic;
-using System.Linq;
-using System;
 
 namespace Ardalis.Extensions.Benchmarks.StringManipulation;
 
 [MemoryDiagnoser]
+[ReturnValueValidator(failOnError: true)]
 public class LinesBenchmarks
 {
   private string Bible { get; set; }
