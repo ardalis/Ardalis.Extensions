@@ -30,13 +30,6 @@ To run the all of the benchmarks, run the following command from the benchmarks 
 dotnet run -c Release
 ```
 
-You can also run the benchmarks individually by running the following command from the benchmarks project folder:
-
-```ps
-dotnet run -c Release --filter *BenchmarkClassName*
-```
-
-
 ## Roadmap
 
 For now as I gather different useful extensions there is a single [Ardalis.Extensions](https://www.nuget.org/packages/Ardalis.Extensions) package available on NuGet. Once there are more than a few, I will most likely break up the extensions into separate individual NuGet packages (for example: Ardalis.StringExtensions? Ardalis.Extensions.Strings?) and then the original Ardalis.Extensions would become a meta-package that would pull in all of the separate smaller packages.
