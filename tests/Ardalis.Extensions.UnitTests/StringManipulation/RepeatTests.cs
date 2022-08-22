@@ -27,6 +27,7 @@ public class RepeatTests
   [Theory]
   [InlineData("a", 3, "aaa")]
   [InlineData("abc", 3, "abcabcabc")]
+  [InlineData("Märyß😁", 3, "Märyß😁Märyß😁Märyß😁")]
   public void ShouldRepeatStrings(string input, uint n, string expected)
   {
     Assert.Equal(expected, input.Repeat(n));

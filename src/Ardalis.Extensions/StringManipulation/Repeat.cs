@@ -1,5 +1,4 @@
-using System;
-using System.Text;
+﻿using System;
 
 namespace Ardalis.Extensions.StringManipulation;
 
@@ -26,6 +25,13 @@ public static partial class StringManipulationExtensions
   /// </example>
   public static string Repeat(this string text, uint n)
   {
-    return new StringBuilder(text.Length * (int)n).Insert(0, text, (int)n).ToString();
+    var textAsSpan = text.AsSpan();
+    var span = new Span<char>(new char[textAsSpan.Length * (int)n]);
+    for (var i = 0; i < n; i++)
+    {
+      textAsSpan.CopyTo(span.Slice((int)i * textAsSpan.Length, textAsSpan.Length));
+    }
+
+    return span.ToString();
   }
 }
