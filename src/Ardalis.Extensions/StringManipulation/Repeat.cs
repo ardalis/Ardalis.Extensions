@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 
 namespace Ardalis.Extensions.StringManipulation;
 
@@ -7,7 +8,7 @@ public static partial class StringManipulationExtensions
   /// <summary>
   /// Creates a new <see cref="String"/> by repeating n times.
   /// </summary>
-  /// <throws cref="ArgumentOutOfRangeException">
+  /// <throws cref="OutOfMemoryException">
   /// This method will throw if the capacity would overflow.
   /// </throws>
   /// <example>
@@ -25,6 +26,6 @@ public static partial class StringManipulationExtensions
   /// </example>
   public static string Repeat(this string text, uint n)
   {
-    return string.Concat(System.Linq.Enumerable.Repeat(text, (int)n));
+    return new StringBuilder(text.Length * (int)n).Insert(0, text, (int)n).ToString();
   }
 }

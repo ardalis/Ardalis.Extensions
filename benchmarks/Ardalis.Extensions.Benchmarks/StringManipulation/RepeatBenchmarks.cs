@@ -18,20 +18,20 @@ public class RepeatBenchmarks
   [Benchmark(Baseline = true)]
   public string RepeatLinq()
   {
-    return "abs".Repeat(N);
+    return "abs".RepeatLinq(N);
   }
 
   [Benchmark]
   public string RepeatStrBuilder()
   {
-    return "abs".RepeatStrBuilder(N);
+    return "abs".Repeat(N);
   }
 }
 
 static class RepeatBenchmarksExtensions
 {
-  public static string RepeatStrBuilder(this string text, uint n)
+  public static string RepeatLinq(this string text, uint n)
   {
-    return new StringBuilder(text.Length * (int)n).Insert(0, text, (int)n).ToString();
+    return string.Concat(System.Linq.Enumerable.Repeat(text, (int)n));
   }
 }

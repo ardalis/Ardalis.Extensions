@@ -21,7 +21,7 @@ public class RepeatTests
   [Fact]
   public void ShouldThrowExceptionWhenOverflow()
   {
-    Assert.ThrowsAny<ArgumentOutOfRangeException>(() => "abc".Repeat(int.MaxValue));
+    Assert.ThrowsAny<OutOfMemoryException>(() => "abc".Repeat(int.MaxValue));
   }
 
   [Theory]
