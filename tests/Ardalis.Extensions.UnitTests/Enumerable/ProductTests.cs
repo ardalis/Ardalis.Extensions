@@ -328,4 +328,197 @@ public class ProducTests
   }
 
   #endregion
+
+  [Fact]
+  public void SameResultsRepeatCallsIntQuery()
+  {
+    var q = from x in new int?[] { 9999, 0, 888, -1, 66, -777, 1, 2, -12345 }
+            where x > int.MinValue
+            select x;
+    Assert.Equal(q.Product(), q.Product());
+  }
+
+  [Fact]
+  public void SolitaryNullableSingle()
+  {
+    float?[] source = { 20.51f };
+    Assert.Equal(source.First(), source.Product());
+  }
+
+  [Fact]
+  public void NaNFromSingles()
+  {
+    float?[] source = { 20.45f, 0f, -10.55f, float.NaN };
+    Assert.True(float.IsNaN(source.Product().Value));
+  }
+
+  [Fact]
+  public void NullableSingleAllNull()
+  {
+    Assert.Equal(null, System.Linq.Enumerable.Repeat(default(float?), 4).Product());
+  }
+
+  [Fact]
+  public void NullableSingleToNegativeInfinity()
+  {
+    float?[] source = { -float.MaxValue, 2f };
+    Assert.True(float.IsNegativeInfinity(source.Product().Value));
+  }
+
+  [Fact]
+  public void SolitaryInt32()
+  {
+    int[] source = { 20 };
+    Assert.Equal(source.First(), source.Product());
+  }
+
+  [Fact]
+  public void OverflowInt32Negative()
+  {
+    int[] source = { -int.MaxValue, 2 };
+    Assert.Throws<OverflowException>(() => source.Product());
+  }
+
+  [Fact]
+  public void SolitaryNullableInt32()
+  {
+    int?[] source = { -9 };
+    Assert.Equal(source.First(), source.Product());
+  }
+
+  [Fact]
+  public void NullableInt32AllNull()
+  {
+    Assert.Equal(null, System.Linq.Enumerable.Repeat(default(int?), 5).Product());
+  }
+
+  [Fact]
+  public void NullableInt32NegativeOverflow()
+  {
+    int?[] source = { -int.MaxValue, 2 };
+    Assert.Throws<OverflowException>(() => source.Product());
+  }
+
+  [Fact]
+  public void SolitaryInt64()
+  {
+    long[] source = { int.MaxValue + 20L };
+    Assert.Equal(source.First(), source.Product());
+  }
+
+  [Fact]
+  public void NullableInt64NegativeOverflow()
+  {
+    long[] source = { -long.MaxValue, 2 };
+    Assert.Throws<OverflowException>(() => source.Product());
+  }
+
+  [Fact]
+  public void SolitaryNullableInt64()
+  {
+    long?[] source = { -int.MaxValue - 20L };
+    Assert.Equal(source.First(), source.Product());
+  }
+
+  [Fact]
+  public void NullableInt64AllNull()
+  {
+    Assert.Equal(null, System.Linq.Enumerable.Repeat(default(long?), 5).Product());
+  }
+
+  [Fact]
+  public void Int64NegativeOverflow()
+  {
+    long?[] source = { -long.MaxValue, 2L };
+    Assert.Throws<OverflowException>(() => source.Product());
+  }
+
+  [Fact]
+  public void SolitaryDouble()
+  {
+    double[] source = { 20.51 };
+    Assert.Equal(source.First(), source.Product());
+  }
+
+  [Fact]
+  public void DoubleWithNaN()
+  {
+    double[] source = { 20.45, 0, -10.55, double.NaN };
+    Assert.True(double.IsNaN(source.Product()));
+  }
+
+  [Fact]
+  public void DoubleToNegativeInfinity()
+  {
+    double[] source = { -double.MaxValue, 2d };
+    Assert.True(double.IsNegativeInfinity(source.Product()));
+  }
+
+  [Fact]
+  public void SolitaryNullableDouble()
+  {
+    double?[] source = { 20.51 };
+    Assert.Equal(source.First(), source.Product());
+  }
+
+  [Fact]
+  public void NullableDoubleAllNull()
+  {
+    Assert.Equal(null, System.Linq.Enumerable.Repeat(default(double?), 4).Product());
+  }
+
+  [Fact]
+  public void NullableDoubleToNegativeInfinity()
+  {
+    double?[] source = { -double.MaxValue, 2d };
+    Assert.True(double.IsNegativeInfinity(source.Product().Value));
+  }
+
+  [Fact]
+  public void SolitaryDecimal()
+  {
+    decimal[] source = { 20.51m };
+    Assert.Equal(source.First(), source.Product());
+  }
+
+  [Fact]
+  public void DecimalNegativeOverflow()
+  {
+    decimal[] source = { -decimal.MaxValue, 2m };
+    Assert.Throws<OverflowException>(() => source.Product());
+  }
+
+  [Fact]
+  public void SolitaryNullableDecimal()
+  {
+    decimal?[] source = { 20.51m };
+    Assert.Equal(source.First(), source.Product());
+  }
+
+  [Fact]
+  public void NullableDecimalAllNull()
+  {
+    Assert.Equal(null, System.Linq.Enumerable.Repeat(default(long?), 3).Product());
+  }
+
+  [Fact]
+  public void NullableDecimalNegativeOverflow()
+  {
+    decimal?[] source = { -decimal.MaxValue, 2m };
+    Assert.Throws<OverflowException>(() => source.Product());
+  }
+
+  [Fact]
+  public void SolitarySingle()
+  {
+    float[] source = { 20.51f };
+    Assert.Equal(source.First(), source.Product());
+  }
+
+  [Fact]
+  public void SingleToNegativeInfinity()
+  {
+    float[] source = { -float.MaxValue, 2f };
+    Assert.True(float.IsNegativeInfinity(source.Product()));
+  }
 }
