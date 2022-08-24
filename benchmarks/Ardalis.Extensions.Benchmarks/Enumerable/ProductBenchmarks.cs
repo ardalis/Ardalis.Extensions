@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using Ardalis.Extensions.Enumerable;
@@ -12,12 +13,13 @@ public class ProductBenchmarks
   [Params(4, 5, 6, 7)]
   public int N { get; set; }
 
-  private List<int> _numbers;
+  private int[] _numbers;
 
   [GlobalSetup]
   public void GlobalSetup()
   {
-    _numbers = System.Linq.Enumerable.Range(1, N).ToList();
+    _numbers = System.Linq.Enumerable.Range(1, N).ToArray();
+    Console.WriteLine($"N = {N} and _numbers has a length of {_numbers.Length}");
   }
 
 
