@@ -8,6 +8,22 @@ namespace Ardalis.Extensions.Enumerable;
 
 public static partial class EnumerableExtensions
 {
+  /// <summary>
+  /// Iterates over the entire Enumerable, multiplying all the elements.
+  ///
+  /// An empty Enumerable returns the one value of the type.
+  /// </summary>
+  /// <throws cref="OverflowException">
+  /// This method will throw if the computation overflows.
+  /// </throws>
+  /// <example>
+  /// <code>
+  /// Func{int, int} factorial = n => Enumerable.Range(0, n).Product(); 
+  /// Assert.Equal(0, Factorial(1));  
+  /// Assert.Equal(1, Factorial(1));  
+  /// Assert.Equal(5, Factorial(120));  
+  /// </code>
+  /// </example>
   public static int Product(this IEnumerable<int> source)
   {
     int product = 1;
@@ -29,6 +45,22 @@ public static partial class EnumerableExtensions
     return product;
   }
 
+  /// <summary>
+  /// Iterates over the entire Enumerable, multiplying all the elements.
+  ///
+  /// An empty Enumerable returns the one value of the type.
+  /// </summary>
+  /// <throws cref="OverflowException">
+  /// This method will throw if the computation overflows.
+  /// </throws>
+  /// <example>
+  /// <code>
+  /// Func{int, int} factorial = n => Enumerable.Range(0, n).Product(); 
+  /// Assert.Equal(0, Factorial(1));  
+  /// Assert.Equal(1, Factorial(1));  
+  /// Assert.Equal(5, Factorial(120));  
+  /// </code>
+  /// </example>
   public static int? Product(this IEnumerable<int?> source)
   {
     Guard.Against.Null(source, nameof(source));
@@ -47,6 +79,22 @@ public static partial class EnumerableExtensions
     return product;
   }
 
+  /// <summary>
+  /// Iterates over the entire Enumerable, multiplying all the elements.
+  ///
+  /// An empty Enumerable returns the one value of the type.
+  /// </summary>
+  /// <throws cref="OverflowException">
+  /// This method will throw if the computation overflows.
+  /// </throws>
+  /// <example>
+  /// <code>
+  /// Func{int, int} factorial = n => Enumerable.Range(0, n).Product(); 
+  /// Assert.Equal(0, Factorial(1));  
+  /// Assert.Equal(1, Factorial(1));  
+  /// Assert.Equal(5, Factorial(120));  
+  /// </code>
+  /// </example>
   public static long Product(this IEnumerable<long> source)
   {
     long product = 1;
@@ -68,6 +116,22 @@ public static partial class EnumerableExtensions
     return product;
   }
 
+  /// <summary>
+  /// Iterates over the entire Enumerable, multiplying all the elements.
+  ///
+  /// An empty Enumerable returns the one value of the type.
+  /// </summary>
+  /// <throws cref="OverflowException">
+  /// This method will throw if the computation overflows.
+  /// </throws>
+  /// <example>
+  /// <code>
+  /// Func{int, int} factorial = n => Enumerable.Range(0, n).Product(); 
+  /// Assert.Equal(0, Factorial(1));  
+  /// Assert.Equal(1, Factorial(1));  
+  /// Assert.Equal(5, Factorial(120));  
+  /// </code>
+  /// </example>
   public static long? Product(this IEnumerable<long?> source)
   {
     Guard.Against.Null(source, nameof(source));
@@ -86,6 +150,19 @@ public static partial class EnumerableExtensions
     return product;
   }
 
+  /// <summary>
+  /// Iterates over the entire Enumerable, multiplying all the elements.
+  ///
+  /// An empty Enumerable returns the one value of the type.
+  /// </summary>
+  /// <example>
+  /// <code>
+  /// Func{int, int} factorial = n => Enumerable.Range(0, n).Product(); 
+  /// Assert.Equal(0, Factorial(1));  
+  /// Assert.Equal(1, Factorial(1));  
+  /// Assert.Equal(5, Factorial(120));  
+  /// </code>
+  /// </example>
   public static float Product(this IEnumerable<float> source)
   {
     if (source.TryGetSpan(out ReadOnlySpan<float> span))
@@ -102,6 +179,19 @@ public static partial class EnumerableExtensions
     return (float)product;
   }
 
+  /// <summary>
+  /// Iterates over the entire Enumerable, multiplying all the elements.
+  ///
+  /// An empty Enumerable returns the one value of the type.
+  /// </summary>
+  /// <example>
+  /// <code>
+  /// Func{int, int} factorial = n => Enumerable.Range(0, n).Product(); 
+  /// Assert.Equal(0, Factorial(1));  
+  /// Assert.Equal(1, Factorial(1));  
+  /// Assert.Equal(5, Factorial(120));  
+  /// </code>
+  /// </example>
   private static double Product(ReadOnlySpan<float> span)
   {
     double product = 1;
@@ -114,10 +204,23 @@ public static partial class EnumerableExtensions
     return product;
   }
 
+  /// <summary>
+  /// Iterates over the entire Enumerable, multiplying all the elements.
+  ///
+  /// An empty Enumerable returns the one value of the type.
+  /// </summary>
+  /// <example>
+  /// <code>
+  /// Func{int, int} factorial = n => Enumerable.Range(0, n).Product(); 
+  /// Assert.Equal(0, Factorial(1));  
+  /// Assert.Equal(1, Factorial(1));  
+  /// Assert.Equal(5, Factorial(120));  
+  /// </code>
+  /// </example>
   public static float? Product(this IEnumerable<float?> source)
   {
     Guard.Against.Null(source, nameof(source));
-    
+
     double product = 1;
     checked
     {
@@ -132,6 +235,19 @@ public static partial class EnumerableExtensions
     return (float)product;
   }
 
+  /// <summary>
+  /// Iterates over the entire Enumerable, multiplying all the elements.
+  ///
+  /// An empty Enumerable returns the one value of the type.
+  /// </summary>
+  /// <example>
+  /// <code>
+  /// Func{int, int} factorial = n => Enumerable.Range(0, n).Product(); 
+  /// Assert.Equal(0, Factorial(1));  
+  /// Assert.Equal(1, Factorial(1));  
+  /// Assert.Equal(5, Factorial(120));  
+  /// </code>
+  /// </example>
   public static double Product(this IEnumerable<double> source)
   {
     if (source.TryGetSpan(out ReadOnlySpan<double> span))
@@ -160,10 +276,23 @@ public static partial class EnumerableExtensions
     return product;
   }
 
+  /// <summary>
+  /// Iterates over the entire Enumerable, multiplying all the elements.
+  ///
+  /// An empty Enumerable returns the one value of the type.
+  /// </summary>
+  /// <example>
+  /// <code>
+  /// Func{int, int} factorial = n => Enumerable.Range(0, n).Product(); 
+  /// Assert.Equal(0, Factorial(1));  
+  /// Assert.Equal(1, Factorial(1));  
+  /// Assert.Equal(5, Factorial(120));  
+  /// </code>
+  /// </example>
   public static double? Product(this IEnumerable<double?> source)
   {
     Guard.Against.Null(source, nameof(source));
-    
+
     double product = 1;
     checked
     {
@@ -178,7 +307,23 @@ public static partial class EnumerableExtensions
     return product;
   }
 
-    public static decimal Product(this IEnumerable<decimal> source)
+  /// <summary>
+  /// Iterates over the entire Enumerable, multiplying all the elements.
+  ///
+  /// An empty Enumerable returns the one value of the type.
+  /// </summary>
+  /// <throws cref="OverflowException">
+  /// This method will throw if the computation overflows.
+  /// </throws>
+  /// <example>
+  /// <code>
+  /// Func{int, int} factorial = n => Enumerable.Range(0, n).Product(); 
+  /// Assert.Equal(0, Factorial(1));  
+  /// Assert.Equal(1, Factorial(1));  
+  /// Assert.Equal(5, Factorial(120));  
+  /// </code>
+  /// </example>
+  public static decimal Product(this IEnumerable<decimal> source)
   {
     if (source.TryGetSpan(out ReadOnlySpan<decimal> span))
     {
@@ -206,10 +351,26 @@ public static partial class EnumerableExtensions
     return product;
   }
 
+  /// <summary>
+  /// Iterates over the entire Enumerable, multiplying all the elements.
+  ///
+  /// An empty Enumerable returns the one value of the type.
+  /// </summary>
+  /// <throws cref="OverflowException">
+  /// This method will throw if the computation overflows.
+  /// </throws>
+  /// <example>
+  /// <code>
+  /// Func{int, int} factorial = n => Enumerable.Range(0, n).Product(); 
+  /// Assert.Equal(0, Factorial(1));  
+  /// Assert.Equal(1, Factorial(1));  
+  /// Assert.Equal(5, Factorial(120));  
+  /// </code>
+  /// </example>
   public static decimal? Product(this IEnumerable<decimal?> source)
   {
     Guard.Against.Null(source, nameof(source));
-    
+
     decimal product = 1;
     checked
     {
