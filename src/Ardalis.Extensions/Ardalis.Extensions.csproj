@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <PackageId>Ardalis.Extensions</PackageId>
         <Title>Ardalis.Extensions</Title>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
