@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <PackageId>Ardalis.Extensions</PackageId>
         <Title>Ardalis.Extensions</Title>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
@@ -12,8 +12,8 @@
         <Summary>Some useful extension methods.</Summary>
         <RepositoryUrl>https://github.com/ardalis/Ardalis.Extensions</RepositoryUrl>
         <PackageTags>extensions extension method methods c# .net dotnet</PackageTags>
-        <PackageReleaseNotes>Added IsASCII. Added Lines(string input). Added Repeat(string input). Thanks @snowfrogdev!</PackageReleaseNotes>
-        <Version>0.9.0</Version>
+        <PackageReleaseNotes>Added Product (as in multiplication) extension on enumerables. Thanks @snowfrogdev!</PackageReleaseNotes>
+        <Version>0.9.1</Version>
         <AssemblyName>Ardalis.Extensions</AssemblyName>
         <PackageIconUrl>https://user-images.githubusercontent.com/782127/33497760-facf6550-d69c-11e7-94e4-b3856da259a9.png</PackageIconUrl>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
