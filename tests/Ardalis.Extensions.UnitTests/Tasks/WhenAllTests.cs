@@ -53,7 +53,7 @@ public class WhenAllTests
   public async Task TakesTupleOfSixTasksAndReturnsTupleOfSixResult()
   {
     var tasks = (
-      GetIntAsync(1), GetStringAsync("Two"), GetDateTimeAsync(3), GetIntAsync(4), GetStringAsync("Five"), 
+      GetIntAsync(1), GetStringAsync("Two"), GetDateTimeAsync(3), GetIntAsync(4), GetStringAsync("Five"),
       GetDateTimeAsync(6));
 
     var result = await tasks.WhenAll();
@@ -65,7 +65,7 @@ public class WhenAllTests
   public async Task TakesTupleOfSevenTasksAndReturnsTupleOfSevenResult()
   {
     var tasks = (
-      GetIntAsync(1), GetStringAsync("Two"), GetDateTimeAsync(3), GetIntAsync(4), GetStringAsync("Five"), 
+      GetIntAsync(1), GetStringAsync("Two"), GetDateTimeAsync(3), GetIntAsync(4), GetStringAsync("Five"),
       GetDateTimeAsync(6), GetIntAsync(7));
 
     var result = await tasks.WhenAll();
@@ -77,7 +77,7 @@ public class WhenAllTests
   public async Task TakesTupleOfEightTasksAndReturnsTupleOfEightResult()
   {
     var tasks = (
-      GetIntAsync(1), GetStringAsync("Two"), GetDateTimeAsync(3), GetIntAsync(4), GetStringAsync("Five"), 
+      GetIntAsync(1), GetStringAsync("Two"), GetDateTimeAsync(3), GetIntAsync(4), GetStringAsync("Five"),
       GetDateTimeAsync(6), GetIntAsync(7), GetStringAsync("Eight"));
 
     var result = await tasks.WhenAll();
@@ -89,7 +89,7 @@ public class WhenAllTests
   public async Task TakesTupleOfNineTasksAndReturnsTupleOfNineResult()
   {
     var tasks = (
-      GetIntAsync(1), GetStringAsync("Two"), GetDateTimeAsync(3), GetIntAsync(4), GetStringAsync("Five"), 
+      GetIntAsync(1), GetStringAsync("Two"), GetDateTimeAsync(3), GetIntAsync(4), GetStringAsync("Five"),
       GetDateTimeAsync(6), GetIntAsync(7), GetStringAsync("Eight"), GetDateTimeAsync(9));
 
     var result = await tasks.WhenAll();
@@ -101,7 +101,7 @@ public class WhenAllTests
   public async Task TakesTupleOfTenTasksAndReturnsTupleOfTenResult()
   {
     var tasks = (
-      GetIntAsync(1), GetStringAsync("Two"), GetDateTimeAsync(3), GetIntAsync(4), GetStringAsync("Five"), 
+      GetIntAsync(1), GetStringAsync("Two"), GetDateTimeAsync(3), GetIntAsync(4), GetStringAsync("Five"),
       GetDateTimeAsync(6), GetIntAsync(7), GetStringAsync("Eight"), GetDateTimeAsync(9), GetIntAsync(10));
 
     var result = await tasks.WhenAll();
@@ -115,6 +115,22 @@ public class WhenAllTests
     var tasks = (GetIntAsync(1), GetExceptionAsync(), GetDateTimeAsync(3));
 
     await Assert.ThrowsAsync<AggregateException>(() => tasks.WhenAll());
+  }
+
+  [Fact]
+  public async Task ResultsInFaultedStateWhenATaskThrows()
+  {
+    var tasks = (GetIntAsync(1), GetExceptionAsync(), GetDateTimeAsync(3));
+
+    try
+    {
+      await tasks.WhenAll();
+      throw new Exception("Should not reach here");
+    }
+    catch (AggregateException)
+    {
+      Assert.True(tasks.Item2.IsFaulted);
+    }
   }
 
   [Fact]
@@ -136,11 +152,28 @@ public class WhenAllTests
   }
 
   [Fact]
-  public async Task ResultsInCancelledStateWhenOneTaskIsCancelled()
+  public async Task ThrowsACancelledExceptionWhenOneTaskIsCancelled()
   {
     var tasks = (GetIntAsync(1), GetCancelledAsync(), GetIntAsync(3));
 
     var exception = await Assert.ThrowsAsync<TaskCanceledException>(() => tasks.WhenAll());
+  }
+
+  [Fact]
+  public async Task ResultsInCancelledStateWhenOneTaskIsCancelled()
+  {
+    var tasks = (GetIntAsync(1), GetCancelledAsync(), GetIntAsync(3));
+
+    var result = tasks.WhenAll();
+    try
+    {
+      await result;
+      throw new Exception("Should not get here");
+    }
+    catch (TaskCanceledException)
+    {
+      Assert.Equal(TaskStatus.Canceled, result.Status);
+    }
   }
 
   private Task<int> GetIntAsync(int value)
