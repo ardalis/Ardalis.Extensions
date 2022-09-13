@@ -11,24 +11,22 @@ public class WhenAllTests
   private readonly string _expectedString = "test";
 
   [Fact]
-  public async Task TakesTupleOfOneTaskAndReturnsTupleOfOneResult()
+  public async Task TakesTupleOfTwoTaskAndReturnsTupleOfOneResult()
   {
-    var tasks = Tuple.Create(GetIntAsync());
+    var tasks = (GetIntAsync(), GetStringAsync());
 
     var result = await tasks.WhenAll();
 
-    Assert.Equal(_expectedInt, result.Item1);
+    Assert.Equal((_expectedInt, _expectedString), result);
   }
 
-  private async Task<int> GetIntAsync()
+  private Task<int> GetIntAsync()
   {
-    await Task.Delay(1);
-    return _expectedInt;
+    return Task.FromResult(_expectedInt);
   }
 
-  private async Task<string> GetStringAsync()
+  private Task<string> GetStringAsync()
   {
-    await Task.Delay(1);
-    return _expectedString;
+    return Task.FromResult(_expectedString);
   }
 }
