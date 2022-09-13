@@ -33,14 +33,14 @@ public static partial class TasksExtensions
     {
       await task;
     }
-    catch (Exception e)
+    catch (Exception)
     {
       if (task.Exception != null)
       {
         throw task.Exception;
       }
 
-      throw e;
+      throw;
     }
 
     return (tasks.Item1.Result, tasks.Item2.Result);
@@ -73,14 +73,14 @@ public static partial class TasksExtensions
     {
       await task;
     }
-    catch (Exception e)
+    catch (Exception)
     {
       if (task.Exception != null)
       {
         throw task.Exception;
       }
 
-      throw e;
+      throw;
     }
 
     return (tasks.Item1.Result, tasks.Item2.Result, tasks.Item3.Result);
@@ -113,14 +113,14 @@ public static partial class TasksExtensions
     {
       await task;
     }
-    catch (Exception e)
+    catch (Exception)
     {
       if (task.Exception != null)
       {
         throw task.Exception;
       }
 
-      throw e;
+      throw;
     }
 
     return (tasks.Item1.Result, tasks.Item2.Result, tasks.Item3.Result, tasks.Item4.Result);
@@ -154,14 +154,14 @@ public static partial class TasksExtensions
     {
       await task;
     }
-    catch (Exception e)
+    catch (Exception)
     {
       if (task.Exception != null)
       {
         throw task.Exception;
       }
 
-      throw e;
+      throw;
     }
 
     return (tasks.Item1.Result, tasks.Item2.Result, tasks.Item3.Result, tasks.Item4.Result, tasks.Item5.Result);
@@ -195,14 +195,14 @@ public static partial class TasksExtensions
     {
       await task;
     }
-    catch (Exception e)
+    catch (Exception)
     {
       if (task.Exception != null)
       {
         throw task.Exception;
       }
 
-      throw e;
+      throw;
     }
 
     return (
@@ -239,14 +239,14 @@ public static partial class TasksExtensions
     {
       await task;
     }
-    catch (Exception e)
+    catch (Exception)
     {
       if (task.Exception != null)
       {
         throw task.Exception;
       }
 
-      throw e;
+      throw;
     }
 
     return (
@@ -283,14 +283,14 @@ public static partial class TasksExtensions
     {
       await task;
     }
-    catch (Exception e)
+    catch (Exception)
     {
       if (task.Exception != null)
       {
         throw task.Exception;
       }
 
-      throw e;
+      throw;
     }
 
     return (
@@ -327,14 +327,14 @@ public static partial class TasksExtensions
     {
       await task;
     }
-    catch (Exception e)
+    catch (Exception)
     {
       if (task.Exception != null)
       {
         throw task.Exception;
       }
 
-      throw e;
+      throw;
     }
 
     return (
@@ -371,14 +371,14 @@ public static partial class TasksExtensions
     {
       await task;
     }
-    catch (Exception e)
+    catch (Exception)
     {
       if (task.Exception != null)
       {
         throw task.Exception;
       }
 
-      throw e;
+      throw;
     }
 
     return (
