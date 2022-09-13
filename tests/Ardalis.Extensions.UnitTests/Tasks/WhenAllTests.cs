@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Ardalis.Extensions.Tasks;
 using Xunit;
@@ -134,6 +135,14 @@ public class WhenAllTests
     var exception = await Assert.ThrowsAsync<ArgumentException>(() => tasks.WhenAll());
   }
 
+  [Fact]
+  public async Task ResultsInCancelledStateWhenOneTaskIsCancelled()
+  {
+    var tasks = (GetIntAsync(1), GetCancelledAsync(), GetIntAsync(3));
+
+    var exception = await Assert.ThrowsAsync<TaskCanceledException>(() => tasks.WhenAll());
+  }
+
   private Task<int> GetIntAsync(int value)
   {
     return Task.FromResult(value);
@@ -157,6 +166,19 @@ public class WhenAllTests
       if (i == 2)
       {
         throw new Exception(message);
+      }
+    }
+    return 44;
+  }
+
+  private async Task<int> GetCancelledAsync()
+  {
+    for (var i = 0; i <= 10; i++)
+    {
+      await Task.Delay(1);
+      if (i == 2)
+      {
+        return await Task.FromCanceled<int>(new CancellationToken(true));
       }
     }
     return 44;
