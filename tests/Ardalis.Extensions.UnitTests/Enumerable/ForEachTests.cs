@@ -40,4 +40,17 @@ public class ForEachTests
 
     Assert.Equal(6, sum);
   }
+
+  [Fact]
+  public void ForEachPropertyUsingIndex()
+  {
+    var source = new List<string> { "a", "b", null, "d" };
+
+    var expected = new List<string> { "a0", "b1", "2", "d3" };
+    var actual = new List<string>();
+
+    source.ForEach((e, i) => actual.Add($"{e}{i}"));
+
+    Assert.Equal(expected, actual);
+  }
 }
