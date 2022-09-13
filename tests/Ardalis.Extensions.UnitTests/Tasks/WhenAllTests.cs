@@ -31,6 +31,14 @@ public class WhenAllTests
     Assert.Equal((_expectedInt, _expectedString, _expectedDateTime), result);
   }
 
+  [Fact]
+  public async Task ThrowsWhenATaskThrows()
+  {
+    var tasks = (GetIntAsync(), GetExceptionAsync(1), GetDateTimeAsync());
+
+    await Assert.ThrowsAsync<WhenAllException>( () => tasks.WhenAll());
+  }
+
   private Task<int> GetIntAsync()
   {
     return Task.FromResult(_expectedInt);
@@ -44,5 +52,25 @@ public class WhenAllTests
   private Task<DateTime> GetDateTimeAsync()
   {
     return Task.FromResult(_expectedDateTime);
+  }
+
+  private async Task<int> GetExceptionAsync(int milliseconds)
+  { 
+    for (var i = 0; i <= milliseconds; i++)
+    {
+      await Task.Delay(1);
+      if (i == milliseconds)
+      {
+        throw new WhenAllException("OMG, an exception!");
+      }
+    }
+    return 44;
+  }
+}
+
+class WhenAllException : Exception
+{
+  public WhenAllException(string message) : base(message)
+  {
   }
 }
