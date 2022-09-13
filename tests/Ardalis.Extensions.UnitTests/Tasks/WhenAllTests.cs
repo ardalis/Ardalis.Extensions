@@ -73,6 +73,18 @@ public class WhenAllTests
   }
 
   [Fact]
+  public async Task TakesTupleOfEightTasksAndReturnsTupleOfEightResult()
+  {
+    var tasks = (
+      GetIntAsync(1), GetStringAsync("Two"), GetDateTimeAsync(3), GetIntAsync(4), GetStringAsync("Five"), 
+      GetDateTimeAsync(6), GetIntAsync(7), GetStringAsync("Eight"));
+
+    var result = await tasks.WhenAll();
+
+    Assert.Equal((1, "Two", new DateTime(3), 4, "Five", new DateTime(6), 7, "Eight"), result);
+  }
+
+  [Fact]
   public async Task ThrowsWhenATaskThrows()
   {
     var tasks = (GetIntAsync(1), GetExceptionAsync(), GetDateTimeAsync(3));
