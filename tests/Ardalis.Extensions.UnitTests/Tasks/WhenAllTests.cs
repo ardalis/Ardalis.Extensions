@@ -78,6 +78,14 @@ public class WhenAllTests
     Assert.Equal("Second", exception.InnerExceptions[1].Message);
   }
 
+  [Fact]
+  public async Task ThrowsWhenTheTasksTupleContainedANullTask()
+  {
+    (Task<int>, Task<string>, Task<DateTime>) tasks = (GetExceptionAsync("First"), null, GetDateTimeAsync(3));
+
+    var exception = await Assert.ThrowsAsync<ArgumentException>(() => tasks.WhenAll());
+  }
+
   private Task<int> GetIntAsync(int value)
   {
     return Task.FromResult(value);
