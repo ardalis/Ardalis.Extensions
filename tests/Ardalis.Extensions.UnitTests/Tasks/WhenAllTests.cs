@@ -34,9 +34,19 @@ public class WhenAllTests
   [Fact]
   public async Task ThrowsWhenATaskThrows()
   {
-    var tasks = (GetIntAsync(), GetExceptionAsync(1), GetDateTimeAsync());
+    var tasks = (GetIntAsync(), GetExceptionAsync(), GetDateTimeAsync());
 
-    await Assert.ThrowsAsync<WhenAllException>( () => tasks.WhenAll());
+    await Assert.ThrowsAsync<AggregateException>(() => tasks.WhenAll());
+  }
+
+  [Fact]
+  public async Task ThrowsWhenMoreThanOneTaskThrows()
+  {
+    var tasks = (GetExceptionAsync("First"), GetExceptionAsync("Second"), GetDateTimeAsync());
+
+    var exception = await Assert.ThrowsAsync<AggregateException>(() => tasks.WhenAll());
+    Assert.Equal("First", exception.InnerExceptions[0].Message);
+    Assert.Equal("Second", exception.InnerExceptions[1].Message);
   }
 
   private Task<int> GetIntAsync()
@@ -54,14 +64,14 @@ public class WhenAllTests
     return Task.FromResult(_expectedDateTime);
   }
 
-  private async Task<int> GetExceptionAsync(int milliseconds)
-  { 
-    for (var i = 0; i <= milliseconds; i++)
+  private async Task<int> GetExceptionAsync(string message = null)
+  {
+    for (var i = 0; i <= 10; i++)
     {
       await Task.Delay(1);
-      if (i == milliseconds)
+      if (i == 2)
       {
-        throw new WhenAllException("OMG, an exception!");
+        throw new WhenAllException(message);
       }
     }
     return 44;
