@@ -52,12 +52,24 @@ public class WhenAllTests
   public async Task TakesTupleOfSixTasksAndReturnsTupleOfSixResult()
   {
     var tasks = (
-      GetIntAsync(1), GetStringAsync("Two"), GetDateTimeAsync(3), GetIntAsync(4), GetStringAsync("Five"), GetDateTimeAsync(6)
-      );
+      GetIntAsync(1), GetStringAsync("Two"), GetDateTimeAsync(3), GetIntAsync(4), GetStringAsync("Five"), 
+      GetDateTimeAsync(6));
 
     var result = await tasks.WhenAll();
 
     Assert.Equal((1, "Two", new DateTime(3), 4, "Five", new DateTime(6)), result);
+  }
+
+  [Fact]
+  public async Task TakesTupleOfSevenTasksAndReturnsTupleOfSevenResult()
+  {
+    var tasks = (
+      GetIntAsync(1), GetStringAsync("Two"), GetDateTimeAsync(3), GetIntAsync(4), GetStringAsync("Five"), 
+      GetDateTimeAsync(6), GetIntAsync(7));
+
+    var result = await tasks.WhenAll();
+
+    Assert.Equal((1, "Two", new DateTime(3), 4, "Five", new DateTime(6), 7), result);
   }
 
   [Fact]
