@@ -7,7 +7,12 @@ Some random C# extension methods I've found useful. Published as Ardalis.Extensi
 
 ## Table of Contents
 
-TODO. A PR would be nice here.
+- [Installation](#installation)
+- [Usage](#usage)
+   - [String checks](#string-checks)
+- [Conventions for Contributors](conventions-for-contributors)
+- [Benchmarks](benchmarks)
+- [Roadmap](roadmap)
 
 ## Installation
 
@@ -49,7 +54,6 @@ if(String.IsNullOrWhiteSpace(someString))
 
 // with
 if(someString.IsNullOrWhiteSpace())
-```
 ```
 
 ## Conventions for Contributors
