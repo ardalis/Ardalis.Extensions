@@ -74,7 +74,7 @@ if(someString.IsNullOrWhiteSpace())
 
 ## Benchmarks
 
-To run the all of the benchmarks, run the following command from the benchmarks project folder:
+To run all of the benchmarks, run the following command from the benchmarks project folder:
 
 ```ps
 dotnet run -c Release
