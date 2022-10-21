@@ -5,8 +5,54 @@
 # Ardalis.Extensions
 Some random C# extension methods I've found useful. Published as Ardalis.Extensions on Nuget.
 
+## Table of Contents
 
-## Conventions
+TODO. A PR would be nice here.
+
+## Installation
+
+Just add a reference the the package and then anywhere you want to use the extensions, add the appropriate `using` statement.
+
+```powershell
+dotnet add package Ardalis.Extensions
+```
+
+## Usage
+
+### String Checks
+
+IsNull() checks whether a given string is null.
+
+```csharp
+// replace
+if(someString is null)
+
+// with
+if(someString.IsNull())
+```
+
+IsNullOrEmpty() checks whether a given string is null or empty.
+
+```csharp
+// replace
+if(String.IsNullOrEmpty(someString))
+
+// with
+if(someString.IsNullOrEmpty())
+```
+
+IsNullOrWhiteSpace checks whether a given string is null or empty or consists of only whitespace characters.
+
+```csharp
+// replace
+if(String.IsNullOrWhiteSpace(someString))
+
+// with
+if(someString.IsNullOrWhiteSpace())
+```
+```
+
+## Conventions for Contributors
 
 - Extension methods are grouped into folders based on similar purpose.
 - Folder nesting should match class namespaces.
