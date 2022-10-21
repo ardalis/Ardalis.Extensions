@@ -10,9 +10,9 @@ Some random C# extension methods I've found useful. Published as Ardalis.Extensi
 - [Installation](#installation)
 - [Usage](#usage)
    - [String checks](#string-checks)
-- [Conventions for Contributors](conventions-for-contributors)
-- [Benchmarks](benchmarks)
-- [Roadmap](roadmap)
+- [Conventions for Contributors](#conventions-for-contributors)
+- [Benchmarks](#benchmarks)
+- [Roadmap](#roadmap)
 
 ## Installation
 
