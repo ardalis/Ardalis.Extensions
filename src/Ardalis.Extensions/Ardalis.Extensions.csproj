@@ -12,8 +12,8 @@
         <Summary>Some useful extension methods.</Summary>
         <RepositoryUrl>https://github.com/ardalis/Ardalis.Extensions</RepositoryUrl>
         <PackageTags>extensions extension method methods c# .net dotnet</PackageTags>
-        <PackageReleaseNotes>Added some string check methods.</PackageReleaseNotes>
-        <Version>0.9.2</Version>
+        <PackageReleaseNotes>Added string window methods.</PackageReleaseNotes>
+        <Version>0.9.3</Version>
         <AssemblyName>Ardalis.Extensions</AssemblyName>
         <PackageIconUrl>https://user-images.githubusercontent.com/782127/33497760-facf6550-d69c-11e7-94e4-b3856da259a9.png</PackageIconUrl>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
