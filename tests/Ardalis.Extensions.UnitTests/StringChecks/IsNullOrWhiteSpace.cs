@@ -12,7 +12,7 @@ public class IsNullOrWhiteSpace
   [InlineData("\n ")]
   public void ReturnsTrueGivenNullOrEmptyOrWhiteSpaceInput(string input)
   {
-    Assert.True(input.IsNullOrEmpty());
+    Assert.True(input.IsNullOrWhiteSpace());
   }
 
   [Theory]
@@ -21,6 +21,6 @@ public class IsNullOrWhiteSpace
   [InlineData(".")]
   public void ReturnsFalseGivenAnyNonEmptyStringValue(string input)
   {
-    Assert.False(input.IsNull());
+    Assert.False(input.IsNullOrWhiteSpace());
   }
 }

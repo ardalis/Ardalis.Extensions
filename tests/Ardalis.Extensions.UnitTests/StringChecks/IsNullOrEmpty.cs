@@ -18,6 +18,6 @@ public class IsNullOrEmpty
   [InlineData(" ")]
   public void ReturnsFalseGivenAnyNonEmptyStringValue(string input)
   {
-    Assert.False(input.IsNull());
+    Assert.False(input.IsNullOrEmpty());
   }
 }
