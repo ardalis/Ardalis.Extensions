@@ -5,16 +5,17 @@
 # Ardalis.Extensions
 Some random C# extension methods I've found useful. Published as Ardalis.Extensions on Nuget.
 
-## Table of Contents
+## | Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-   - [String checks](#string-checks)
+- [installation](#installation)
+- [usage](#usage) (string check)
+    - [isNull()](#isnull)
+    - [IsNullOrEmpty()](#isnullorempty)
+    - [IsNullOrWhiteSpace()](#isnullorwhitespace)
 - [Conventions for Contributors](#conventions-for-contributors)
 - [Benchmarks](#benchmarks)
 - [Roadmap](#roadmap)
-
-## Installation
+## | Installation
 
 Just add a reference the the package and then anywhere you want to use the extensions, add the appropriate `using` statement.
 
@@ -22,11 +23,12 @@ Just add a reference the the package and then anywhere you want to use the exten
 dotnet add package Ardalis.Extensions
 ```
 
-## Usage
+## | Usage
 
 ### String Checks
 
-IsNull() checks whether a given string is null.
+#### IsNull() 
+checks whether a given string is null.
 
 ```csharp
 // replace
@@ -36,7 +38,8 @@ if(someString is null)
 if(someString.IsNull())
 ```
 
-IsNullOrEmpty() checks whether a given string is null or empty.
+### IsNullOrEmpty()
+ checks whether a given string is null or empty.
 
 ```csharp
 // replace
@@ -46,7 +49,8 @@ if(String.IsNullOrEmpty(someString))
 if(someString.IsNullOrEmpty())
 ```
 
-IsNullOrWhiteSpace checks whether a given string is null or empty or consists of only whitespace characters.
+### IsNullOrWhiteSpace 
+Checks whether a given string is null or empty or consists of only whitespace characters.
 
 ```csharp
 // replace
@@ -56,7 +60,8 @@ if(String.IsNullOrWhiteSpace(someString))
 if(someString.IsNullOrWhiteSpace())
 ```
 
-## Conventions for Contributors
+
+## | Conventions for Contributors
 
 - Extension methods are grouped into folders based on similar purpose.
 - Folder nesting should match class namespaces.
@@ -72,14 +77,13 @@ if(someString.IsNullOrWhiteSpace())
 - Test classes should have a `Tests` suffix.
 - Benchmark classe should have a `Benchmarks` suffix.
 
-## Benchmarks
+## | Benchmarks
 
-To run all of the benchmarks, run the following command from the benchmarks project folder:
-
+To run the all of the benchmarks, run the following command from the benchmarks project folder:
 ```ps
 dotnet run -c Release
 ```
 
-## Roadmap
+## | Roadmap
 
 For now as I gather different useful extensions there is a single [Ardalis.Extensions](https://www.nuget.org/packages/Ardalis.Extensions) package available on NuGet. Once there are more than a few, I will most likely break up the extensions into separate individual NuGet packages (for example: Ardalis.StringExtensions? Ardalis.Extensions.Strings?) and then the original Ardalis.Extensions would become a meta-package that would pull in all of the separate smaller packages.
