@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Ardalis.Extensions.Linq;
 using Ardalis.Extensions.List;
 using Xunit;
 
@@ -49,7 +48,6 @@ public class AddRangeIfNotNull
     var list = new List<int> { 1, 2, 3 };
 
     list.AddRangeIfNotNull(new List<int>() { 4, 5 });
-
 
     Assert.Equal(1, list.First());
     Assert.Equal(5, list.Last());
