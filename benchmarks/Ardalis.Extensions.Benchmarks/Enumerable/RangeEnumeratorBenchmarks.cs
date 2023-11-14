@@ -15,7 +15,7 @@ public class RangeEnumeratorBenchmarks
   {
     for (int i = 0; i < End; i++)
     {
-      DoSomething(i);
+      DoNotOptimizeAway(i);
     }
   }
   
@@ -24,10 +24,13 @@ public class RangeEnumeratorBenchmarks
   {
     foreach(var i in 0..End)
     {
-      DoSomething(i);
+      DoNotOptimizeAway(i);
     }
   }
 
-  // Prevent the compiler from optimizing away the loop
-  private static void DoSomething(int i) { }
+  /// <summary>
+  /// Prevent the compiler from optimizing away the loop
+  /// </summary>
+  /// <param name="i"></param>
+  private static void DoNotOptimizeAway(int i) { }
 }
