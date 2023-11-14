@@ -29,8 +29,8 @@ public class RangeEnumeratorBenchmarks
   }
 
   /// <summary>
-  /// Prevent the compiler from optimizing away the loop
+  /// Prevent the compiler from optimizing away loop enumeration.
   /// </summary>
-  /// <param name="i"></param>
+  /// <param name="i">Current loop value</param>
   private static void DoNotOptimizeAway(int i) { }
 }
