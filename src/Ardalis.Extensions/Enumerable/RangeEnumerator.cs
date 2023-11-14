@@ -44,8 +44,14 @@ public static partial class EnumerableExtensions
 
     public bool MoveNext()
     {
+      // prevent overflow if the end value is int.MaxValue
+      if (_current == int.MaxValue)
+      {
+        return false;
+      }
+
       _current++;
-      return _current < _end;
+      return _current <= _end;
     }
   }
 }

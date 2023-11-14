@@ -67,6 +67,9 @@ public class RangeEnumeratorTests
       Assert.Equal(counter, i);
       counter++;
     }
+
+    // ensure we are inclusive of the end
+    Assert.Equal(counter - 1, end);
   }
   
   [Theory]
@@ -81,6 +84,9 @@ public class RangeEnumeratorTests
       Assert.Equal(counter, i);
       counter++;
     }
+
+    // ensure we are inclusive of the end
+    Assert.Equal(counter - 1, end);
   }
 
   [Theory]
@@ -95,5 +101,8 @@ public class RangeEnumeratorTests
       Assert.Equal(counter, i);
       counter++;
     }
+
+    // ensure we are inclusive of the end
+    Assert.Equal(counter - 1, end);
   }
 }
