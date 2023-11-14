@@ -15,7 +15,7 @@ public class RangeEnumeratorTests
       foreach (int i in -10..0) { }
     });
   }
-  
+
   [Fact]
   public void Foreach_EndIsNegative_ThrowsOutOfRange()
   {
@@ -44,16 +44,20 @@ public class RangeEnumeratorTests
       Assert.True(false, "A range where the end is less than the start should yield no iterations.");
     }
   }
-  
-  [Fact]
-  public void Foreach_StartEqualsEnd_NoIteration()
+
+  [Theory]
+  [InlineData(0, 0)]
+  [InlineData(1000, 1000)]
+  [InlineData(int.MaxValue, int.MaxValue)]
+  public void Foreach_StartEqualsEnd_OneIteration(int start, int end)
   {
-    foreach (var i in 0..0)
+    // because we are inclusive of the end value, e.g. 0..0 should yield 1 iteration with value 0
+    foreach (var i in start..end)
     {
-      Assert.True(false, "A range where the start and end are equal should yield no iterations.");
+      Assert.Equal(start, i);
     }
   }
-  
+
   [Theory]
   [InlineData(0, 10)]
   [InlineData(0, 1000)]
@@ -71,12 +75,12 @@ public class RangeEnumeratorTests
     // ensure we are inclusive of the end
     Assert.Equal(counter - 1, end);
   }
-  
+
   [Theory]
   [InlineData(10)]
   [InlineData(1000)]
   [InlineData(100000)]
-  public void Foreach_DotDotToEnd_IteratesAsExpected(int end)
+  public void Foreach_DotDotToEnd_IteratesFromZeroAsExpected(int end)
   {
     int counter = 0;
     foreach (var i in ..end)
@@ -93,7 +97,7 @@ public class RangeEnumeratorTests
   [InlineData(10)]
   [InlineData(1000)]
   [InlineData(100000)]
-  public void Foreach_ToEnd_IteratesAsExpected(int end)
+  public void Foreach_ToEnd_IteratesFromZeroAsExpected(int end)
   {
     int counter = 0;
     foreach (var i in end)
