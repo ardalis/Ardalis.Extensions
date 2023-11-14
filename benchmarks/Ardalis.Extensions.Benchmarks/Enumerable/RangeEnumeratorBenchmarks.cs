@@ -13,7 +13,7 @@ public class RangeEnumeratorBenchmarks
   [Benchmark(Baseline = true)]
   public void NormalForLoop()
   {
-    for (int i = 0; i < End; i++)
+    for (int i = 0; i <= End; i++)
     {
       DoNotOptimizeAway(i);
     }

@@ -9,6 +9,7 @@ Some random C# extension methods I've found useful. Published as Ardalis.Extensi
 
 - [Installation](#installation)
 - [Usage](#usage)
+   - [Enumerable](#enumerable)
    - [String checks](#string-checks)
 - [Conventions for Contributors](#conventions-for-contributors)
 - [Benchmarks](#benchmarks)
@@ -23,6 +24,22 @@ dotnet add package Ardalis.Extensions
 ```
 
 ## Usage
+
+### Enumerable
+
+RangeEnumerator allows you to loop over a range of integers up to and including the ending value.
+
+```csharp
+// replace
+for(var i = 0; i <= 10; i++)
+
+// with
+foreach(var i in 0..10)
+// or
+foreach(var i in ..10)
+// or 
+foreach(var i in 10)
+```
 
 ### String Checks
 
