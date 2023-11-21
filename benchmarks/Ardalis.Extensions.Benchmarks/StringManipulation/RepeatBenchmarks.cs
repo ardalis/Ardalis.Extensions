@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using BenchmarkDotNet.Attributes;
 using Ardalis.Extensions.StringManipulation;
+using System;
 
 namespace Ardalis.Extensions.Benchmarks.StringManipulation;
 
@@ -33,7 +34,13 @@ public class RepeatBenchmarks
   [Benchmark]
   public string RepeatSpan()
   {
-    return "abc".Repeat(N);
+    return "abc".RepeatSpan(N);
+  }
+
+  [Benchmark]
+  public string RepeatStringCreate()
+  {
+    return "abc".RepeatStringCreate(N);
   }
 }
 
@@ -58,5 +65,22 @@ static class RepeatBenchmarksExtensions
     }
 
     return new string(arr);
+  }
+
+  public static string RepeatSpan(this string text, uint n)
+  {
+    var textAsSpan = text.AsSpan();
+    var span = new Span<char>(new char[textAsSpan.Length * (int)n]);
+    for (var i = 0; i < n; i++)
+    {
+      textAsSpan.CopyTo(span.Slice((int)i * textAsSpan.Length, textAsSpan.Length));
+    }
+
+    return span.ToString();
+  }
+
+  public static string RepeatStringCreate(this string text, uint n)
+  {
+    return text.Repeat(n);
   }
 }

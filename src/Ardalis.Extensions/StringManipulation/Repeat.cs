@@ -25,13 +25,14 @@ public static partial class StringManipulationExtensions
   /// </example>
   public static string Repeat(this string text, uint n)
   {
-    var textAsSpan = text.AsSpan();
-    var span = new Span<char>(new char[textAsSpan.Length * (int)n]);
-    for (var i = 0; i < n; i++)
+    int totalLength = text.Length * (int)n;
+    return string.Create(totalLength, text, (resultSpan, textToRepeat) =>
     {
-      textAsSpan.CopyTo(span.Slice((int)i * textAsSpan.Length, textAsSpan.Length));
-    }
-
-    return span.ToString();
+      var textToRepeatSpan = textToRepeat.AsSpan();
+      for (int i = 0; i < resultSpan.Length; i += textToRepeat.Length)
+      {
+        textToRepeatSpan.CopyTo(resultSpan[i..]);
+      }
+    });
   }
 }
